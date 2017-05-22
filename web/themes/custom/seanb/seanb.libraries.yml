@@ -1,0 +1,15 @@
+jquery.inview:
+  version: 1.x
+  js:
+      static/js/lib/jquery.inview.min.js: {}
+  dependencies:
+    - core/jquery
+main:
+  version: 1.x
+  css:
+    base:
+      static/css/main.css: {}
+  js:
+      static/js/main.js: {}
+  dependencies:
+    - jquery.inview

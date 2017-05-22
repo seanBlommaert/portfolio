@@ -1,0 +1,15 @@
+uuid: 689b24c3-d1de-4a64-a1cc-be9ce5443c78
+langcode: en
+status: false
+dependencies: {  }
+id: excluded
+label: Excluded
+folder: ../config/excluded
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - 'webform.webform.*'
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

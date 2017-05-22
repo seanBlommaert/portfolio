@@ -1,0 +1,30 @@
+uuid: 3ae85437-1b4c-4355-9cf0-441a5e5594d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.skills.field_skills
+    - paragraphs.paragraphs_type.skills
+  module:
+    - paragraphs
+id: paragraph.skills.default
+targetEntityType: paragraph
+bundle: skills
+mode: default
+content:
+  field_skills:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

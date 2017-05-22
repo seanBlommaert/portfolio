@@ -1,0 +1,24 @@
+uuid: 988ed1d9-52a1-4746-ab3d-bc5b64a07fd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.contact
+  module:
+    - system
+  theme:
+    - fortytwo
+id: fortytwo_contact
+theme: fortytwo
+region: header
+weight: -3
+provider: null
+plugin: 'system_menu_block:contact'
+settings:
+  id: 'system_menu_block:contact'
+  label: Contact
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: e1d209b1-c6b3-4756-a3d0-1f253be15442
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cases.field_cases
+    - paragraphs.paragraphs_type.cases
+  module:
+    - entity_reference_revisions
+id: paragraph.cases.default
+targetEntityType: paragraph
+bundle: cases
+mode: default
+content:
+  field_cases:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

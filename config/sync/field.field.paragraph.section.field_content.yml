@@ -1,0 +1,59 @@
+uuid: 1b7451c8-afab-4d52-8c91-f7c88070cbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.cases
+    - paragraphs.paragraphs_type.form
+    - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.skills
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: section
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      links: links
+      skills: skills
+      cases: cases
+      form: form
+    target_bundles_drag_drop:
+      text:
+        enabled: true
+        weight: -17
+      links:
+        enabled: true
+        weight: -16
+      skills:
+        enabled: true
+        weight: -15
+      cases:
+        enabled: true
+        weight: -14
+      form:
+        enabled: true
+        weight: -13
+      skill:
+        weight: -12
+        enabled: false
+      section:
+        weight: -11
+        enabled: false
+      case:
+        weight: -10
+        enabled: false
+field_type: entity_reference_revisions

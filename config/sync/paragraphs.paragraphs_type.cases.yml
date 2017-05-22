@@ -1,0 +1,7 @@
+uuid: e497ad85-2525-4cab-a79f-60fd50a100ec
+langcode: en
+status: true
+dependencies: {  }
+id: cases
+label: Cases
+behavior_plugins: {  }

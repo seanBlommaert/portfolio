@@ -1,0 +1,45 @@
+version: "2"
+
+# Access site at http://${NAME}.dev
+# Point search_api_solr to http://${NAME}-solr:8983/solr/#/drupal
+
+services:
+
+  php:
+    image: wodby/drupal-php:${PHP_WODBY_TAG}
+    environment:
+      PHP_DOCROOT: web # Relative path inside the /var/www/html/ directory.
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog.dev:1025
+      PHP_XDEBUG_ENABLED: 1
+      PHP_XDEBUG_AUTOSTART: 1
+      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting bellow
+      PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # You will also need to 'sudo ifconfig lo0 alias 10.254.254.254'
+    volumes:
+#      - ./:/var/www/html
+      - seanb-sync:/var/www/html:nocopy # Replace volume to this to use docker-sync for macOS users
+    external_links:
+      - mysql
+      - dockerdns
+    network_mode: bridge # Expose to other docker-compose networks in order to use mysql etc.
+    dns:
+     - ${DOCKERDNS}
+
+  nginx:
+    container_name: ${NAME} # without .dev if using .dev dns
+    image: wodby/drupal-nginx:1.10-1.1.0
+    environment:
+      VIRTUAL_HOST: ${NAME}.dev # This tell global proxy about this container.
+      NGINX_SERVER_NAME: ${NAME}.dev
+      NGINX_UPSTREAM_NAME: php
+      NGINX_DOCROOT: ${DOCROOT} # Relative path inside the /var/www/html/ directory.
+      DRUPAL_VERSION: ${DRUPAL_VERSION}  # Allowed: 7, 8.
+    volumes:
+#      - ./:/var/www/html
+       - seanb-sync:/var/www/html:nocopy
+    links:
+      - php
+    network_mode: bridge # Expose to other docker-compose networks in order to use mysql etc.
+
+volumes:
+  seanb-sync:
+    external: true

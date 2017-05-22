@@ -1,0 +1,308 @@
+label[for*='disabled'] {
+  color: darken($silver, 15%);
+}
+
+@mixin button {
+  @extend %button-hover;
+  border: 1px solid $button-border-color;
+  font-family: $default-font;
+  font-style: normal;
+  line-height: pxtorem($default-line-height / 1.5);
+  vertical-align: baseline;
+  width: auto;
+
+  &.disabled:hover,
+  &.disabled {
+    background-color: $form-button-background-disabled-color;
+    border: 1px solid $form-button-border-disabled-color;
+    color: $form-button-font-disabled-color;
+  }
+}
+
+button,
+input[type='submit'],
+input[type='button'],
+a.button {
+  @include button;
+  margin-right: 10px;
+}
+
+span.form-required {
+  color: $error-red;
+  font-weight: bold;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 0;
+}
+
+// TEXT INPUTS
+input, textarea {
+  background-color: $form-background-color;
+  border: 1px solid $form-border-color;
+  display: block;
+  margin: 10px 0 20px;
+  padding: 10px 20px;
+  width: 100%;
+
+  &.error {
+    border: 1px solid $error-red;
+  }
+
+  .form-item & {
+    &.error {
+      border: 1px solid $error-red;
+    }
+  }
+}
+
+input[type='file'] {
+  padding: pxtorem(1px, 0, 1px, 1px);
+}
+
+input[disabled] {
+  background-color: lighten($silver, 15%);
+  border: 1px solid $silver;
+}
+
+fieldset {
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  legend {
+    padding: 0 5px;
+    white-space: nowrap;
+  }
+
+  html.js & {
+    &.collapsible {
+      .fieldset-legend {
+        background-image: none;
+        padding-left: 0;
+
+        &:before {
+          @include arrow('down');
+          display: inline-block;
+          font-size: perc(12px);
+          height: 14px;
+          width: 14px;
+        }
+      }
+
+      &.collapsed {
+        border-left: 1px solid transparent;
+
+        .fieldset-legend {
+          &:before {
+            transform: rotate(-90deg);
+
+            vertical-align: 3px;
+          }
+        }
+      }
+
+      a.fieldset-title {
+        padding-left: pxtorem(3px);
+      }
+    }
+  }
+}
+
+.password-confirm > span {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.password-indicator {
+  div {
+    background-color: $message-status;
+  }
+}
+
+// INPUT CHECKBOXES
+input[type='checkbox']:checked + label,
+input[type='radio']:checked + label {
+  color: $checked-color;
+
+  &:before {
+    color: $checked-color;
+  }
+}
+
+input {
+  &[type='radio'],
+  &[type='checkbox'] {
+    @include opacity(0);
+    cursor: pointer;
+    position: absolute;
+
+    & + label {
+      cursor: pointer;
+    }
+
+    & + label:before {
+      @include icon('unchecked');
+      background-color: $white;
+      color: $silver;
+      margin-right: $icon-spacing;
+    }
+
+    &.hide-outline:focus + label {
+      outline: none;
+    }
+
+    &.error + label:before {
+      color: $error-red;
+    }
+
+    html.lt-ie9 & {
+      @include opacity(1);
+      background-color: transparent;
+      position: relative;
+
+      &:focus,
+      &:active {
+        border: 0;
+        outline: none;
+      }
+
+      & + label:before {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  &[type='checkbox'] {
+    &:checked + label:before {
+      @include icon('checked');
+    }
+  }
+
+  &[type='radio'] {
+    &:checked + label:before {
+      @include icon('checked-dot');
+    }
+  }
+}
+
+// FILE INPUT BOXES
+label.fileinput.prettify {
+  border: 1px solid $form-border-color;
+  display: inline-block;
+  font-weight: normal;
+  height: 30px;
+  min-width: 280px;
+  position: relative;
+
+  input[type='file'] {
+    max-width: 280px;
+  }
+
+  &.error {
+    border: 1px solid $error-red;
+  }
+
+  &.disabled {
+    background-color: $form-disabled-background-color;
+    border: 1px solid $form-disabled-border-color;
+    color: $form-disabled-font-color;
+    pointer-events: none;
+
+    a.button {
+      background-color: $form-button-background-disabled-color;
+      border: 1px solid $form-button-border-disabled-color;
+      color: $form-button-font-disabled-color;
+      pointer-events: none;
+    }
+  }
+
+  > div {
+    display: table;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+
+    > span {
+      display: table-cell;
+    }
+
+    span.filetext {
+      color: $form-font-color;
+      max-width: 100px;
+      overflow: hidden;
+      padding: 0 10px;
+      text-overflow: ellipsis;
+      width: 100%;
+
+      &.selected {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: 0;
+}
+
+// SELECT BOXES
+label.select.prettify {
+  @include button;
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 0;
+  position: relative;
+
+  &.error {
+    &:after {
+      border: 1px solid $error-red;
+      bottom: -2px;
+      content: '';
+      left: -2px;
+      position: absolute;
+      right: -2px;
+      top: -2px;
+    }
+
+    &.focus {
+      outline-offset: 4px;
+    }
+  }
+
+  select {
+    border: 1px solid transparent;
+    bottom: 0;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:after {
+      @include arrow('down');
+      font-size: 70%;
+      padding-left: 10px;
+      vertical-align: 1px;
+    }
+  }
+
+  option {
+    html.lt-ie9 & {
+      width: 100%;
+    }
+  }
+}

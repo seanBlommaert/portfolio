@@ -1,0 +1,30 @@
+.front {
+  main.content {
+    section {
+      overflow: hidden;
+      padding: 60px 0;
+
+      h1 {
+        padding-bottom: 40px;
+        text-align: center;
+      }
+    }
+
+    section#about {
+      text-align: center;
+    }
+
+    section.grey {
+      background-color: $light-grey;
+    }
+
+    section.black {
+      background-color: $black;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.form {
+  .text {
+    float: left;
+    padding-right: 40px;
+    width: 50%;
+  }
+
+  a.phone,
+  a.mail {
+    color: $page-font-color;
+    display: block;
+    padding: 10px 20px 0 0;
+    text-decoration: none;
+
+    &:before {
+      margin-right: 10px;
+      vertical-align: text-top;
+    }
+  }
+
+  form {
+    border-left: 1px solid $form-border-color;
+    overflow: auto;
+    padding-left: 40px;
+    width: 50%;
+  }
+}

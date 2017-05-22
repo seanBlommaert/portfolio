@@ -1,0 +1,8 @@
+uuid: 5e22ec52-12f2-4277-96c1-8a48d71df820
+langcode: en
+status: true
+dependencies: {  }
+id: social
+label: 'Social navigation'
+description: ''
+locked: false

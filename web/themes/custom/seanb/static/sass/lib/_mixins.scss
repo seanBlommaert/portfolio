@@ -1,0 +1,61 @@
+%clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+%transition {
+  transition: color 0.2s ease-in-out;
+  transition-property: color, background-color, border, text-decoration, width, height;
+}
+
+%social-hovers {
+  .drupal:hover:before {
+    color: $drupal;
+  }
+
+  .github:hover:before {
+    color: $github;
+  }
+
+  .linkedin:hover:before {
+    color: $linkedin;
+  }
+
+  .twitter:hover:before {
+    color: $twitter;
+  }
+}
+
+%button-hover {
+  color: $button-font-color;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+
+  &:before {
+    background-color: $button-background-hover-color;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: 0.2s ease;
+    width: 0;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $button-font-hover-color;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+}

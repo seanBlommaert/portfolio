@@ -1,0 +1,48 @@
+uuid: abe0a209-e251-49fb-be4a-5e53cd7ded13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cases
+    - paragraphs.paragraphs_type.case
+    - paragraphs.paragraphs_type.cases
+  module:
+    - entity_reference_revisions
+id: paragraph.cases.field_cases
+field_name: field_cases
+entity_type: paragraph
+bundle: cases
+label: Cases
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      case: case
+    target_bundles_drag_drop:
+      case:
+        enabled: true
+        weight: 8
+      cases:
+        weight: 9
+        enabled: false
+      form:
+        weight: 10
+        enabled: false
+      section:
+        weight: 11
+        enabled: false
+      skill:
+        weight: 12
+        enabled: false
+      skills:
+        weight: 13
+        enabled: false
+      text:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

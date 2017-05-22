@@ -1,0 +1,23 @@
+uuid: 2af4f7eb-e264-4d27-8a69-9559846e433c
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - seanb
+id: seanb_entityviewcontent
+theme: seanb
+region: header
+weight: -5
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Entity view (Content - Header)'
+  provider: ctools
+  label_display: '0'
+  view_mode: header
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

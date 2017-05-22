@@ -1,0 +1,69 @@
+uuid: cb67f21c-a1be-4ed3-9831-e3507e9a8afe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header
+    - field.field.node.page.field_content
+    - field.field.node.page.field_image
+    - field.field.node.page.field_meta
+    - field.field.node.page.field_subtitle
+    - field.field.node.page.field_title
+    - node.type.page
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_title_wrapper:
+      children:
+        - field_title
+        - field_subtitle
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: title-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Title wrapper'
+id: node.page.header
+targetEntityType: node
+bundle: page
+mode: header
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_subtitle:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_content: true
+  field_meta: true
+  links: true

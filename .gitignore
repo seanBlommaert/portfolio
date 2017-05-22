@@ -1,0 +1,92 @@
+# Ignore composer generated files/directories.
+drush/contrib
+vendor
+
+# Ignore Drupal core files/directories.
+web/core
+web/vendor
+web/modules/contrib
+web/themes/contrib
+web/profiles/contrib
+web/.csslintrc
+web/.editorconfig
+web/.eslintignore
+web/.eslintrc
+web/.eslintrc.json
+web/.gitattributes
+web/.htaccess
+web/autoload.php
+web/index.php
+web/update.php
+web/sites/default/default.services.yml
+web/sites/default/default.settings.php
+web/sites/default/services.yml
+web/sites/development.services.yml
+web/sites/example.settings.local.php
+web/sites/example.sites.php
+
+# Ignore drupals README/TXT files.
+web/README.txt
+web/LICENSE.txt
+web/robots.txt
+web/sites/README.txt
+web/modules/README.txt
+web/themes/README.txt
+web/profiles/README.txt
+
+# Ignore excluded config
+config/excluded/*
+!config/excluded/.gitkeep
+
+# Ignore configuration files that may contain sensitive information.
+web/sites/*/settings*.php
+web/sites/*/services.yml
+
+# Ignore Drupal's file directory.
+web/sites/*/files
+web/sites/*/private
+
+# Ignore docker generated files.
+.solr-data
+.docker-sync
+
+# Ignore keys/certificates.
+*.key
+*.crt
+
+# Ignore file type that contain large files (to avoid trouble). Optionally add or remove some extensions
+*.tar
+*.gz
+*.zip
+*.sql
+*.flv
+*.avi
+.sass-cache
+
+# Ignore Development files, including IDE files.
+FirePHPCore/*
+.project
+.settings
+.buildpath
+.idea
+
+# Ignore web.config file, not used.
+web.config
+
+# Ignore unused versioning files.
+.svn
+
+# Ignore generated files.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.dbi
+Thumbs.db
+.sass-cache
+sass-cache
+bower_components
+node_modules
+.idea

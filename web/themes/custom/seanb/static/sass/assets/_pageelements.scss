@@ -1,0 +1,67 @@
+div.page-wrapper {
+  animation: blockFadeIn 0.5s ease-out 0s 1 forwards;
+  height: 100vh;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  perspective-origin-x: 100%;
+  width: 100%;
+}
+
+// Messages
+div.alert {
+  background-image: none;
+  border: 0;
+  color: $white;
+  padding: pxtorem(10px);
+
+  .krumo-root {
+    color: $black;
+  }
+
+  > ul {
+    display: inline-block;
+    margin: 0;
+  }
+
+  &:before {
+    float: left;
+    margin-top: pxtorem(1px);
+    padding-right: pxtorem(10px);
+  }
+
+  &.alert-warning {
+    background-color: $message-warning;
+
+    &:before {
+      @include icomoon('warning');
+    }
+  }
+
+  &.alert-info {
+    background-color: $message-status;
+
+    &:before {
+      @include icomoon('status');
+    }
+  }
+
+  &.alert-danger {
+    background-color: $message-error;
+
+    &:before {
+      @include icomoon('error');
+    }
+  }
+}
+
+p.intro {
+  font-size: $introduction-font-size;
+  margin-top: 0;
+}
+
+.wrapper {
+  background-color: $page-background-color;
+  z-index: 2;
+}

@@ -1,0 +1,24 @@
+uuid: 38720180-7627-4eab-99aa-ee5d7c21373f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social
+  module:
+    - system
+  theme:
+    - fortytwo
+id: fortytwo_social
+theme: fortytwo
+region: header
+weight: -1
+provider: null
+plugin: 'system_menu_block:social'
+settings:
+  id: 'system_menu_block:social'
+  label: Social
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

@@ -1,0 +1,13 @@
+li.node-readmore a:after {
+  @include icomoon('caret-right');
+  font-size: 50%;
+  vertical-align: 1px;
+}
+
+div.wrapper {
+  .content.column,
+  .sidebar.first,
+  .sidebar.second {
+    margin-bottom: 0;
+  }
+}

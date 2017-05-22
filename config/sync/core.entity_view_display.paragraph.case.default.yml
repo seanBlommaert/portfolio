@@ -1,0 +1,100 @@
+uuid: 66179c77-f73c-4736-b3ed-91bf52cd52a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.case.field_description
+    - field.field.paragraph.case.field_image
+    - field.field.paragraph.case.field_links
+    - field.field.paragraph.case.field_role
+    - field.field.paragraph.case.field_tags
+    - field.field.paragraph.case.field_title
+    - field.field.paragraph.case.field_year
+    - image.style.cases
+    - paragraphs.paragraphs_type.case
+  module:
+    - field_group
+    - image
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_details:
+      children:
+        - field_title
+        - field_year
+        - field_description
+        - field_links
+        - field_tags
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: details
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Details
+id: paragraph.case.default
+targetEntityType: paragraph
+bundle: case
+mode: default
+content:
+  field_description:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: cases
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_links:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_tags:
+    weight: 6
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_year:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_role: true

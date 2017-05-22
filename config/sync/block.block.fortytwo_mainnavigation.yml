@@ -1,0 +1,24 @@
+uuid: 74698152-1170-49cf-9705-a5749f090626
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - fortytwo
+id: fortytwo_mainnavigation
+theme: fortytwo
+region: header
+weight: -2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

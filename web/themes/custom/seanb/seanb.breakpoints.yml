@@ -1,0 +1,30 @@
+seanb.mobile_p:
+  label: mobile_p
+  mediaQuery: 'screen and (min-width: 0px) and (max-width: 479px)'
+  weight: 0
+  multipliers:
+    - 1x
+seanb.mobile_l:
+  label: mobile_l
+  mediaQuery: 'screen and (min-width: 480px) and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+seanb.tablet_p:
+  label: tablet_p
+  mediaQuery: 'screen and (min-width: 768px) and (max-width: 1001px)'
+  weight: 1
+  multipliers:
+    - 1x
+seanb.tablet_l:
+  label: tablet_l
+  mediaQuery: 'screen and (min-width: 1002px) and (max-width: 1247px)'
+  weight: 1
+  multipliers:
+    - 1x
+seanb.desktop:
+  label: desktop
+  mediaQuery: 'screen and (min-width: 1248px)'
+  weight: 1
+  multipliers:
+    - 1x

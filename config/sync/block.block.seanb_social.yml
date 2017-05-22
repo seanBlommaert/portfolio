@@ -1,0 +1,24 @@
+uuid: 6621b748-3d5f-4a5d-ba8e-24eb67809fde
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social
+  module:
+    - system
+  theme:
+    - seanb
+id: seanb_social
+theme: seanb
+region: navigation
+weight: -2
+provider: null
+plugin: 'system_menu_block:social'
+settings:
+  id: 'system_menu_block:social'
+  label: 'Social navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

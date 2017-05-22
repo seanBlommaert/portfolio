@@ -1,0 +1,8 @@
+.links {
+  margin-top: 40px;
+
+  a {
+    @extend %button-hover;
+    border: 1px solid $button-border-color;
+  }
+}

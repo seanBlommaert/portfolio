@@ -1,0 +1,14 @@
+uuid: 35607e23-cb9c-44aa-a580-5f17cad33aa4
+langcode: en
+status: true
+dependencies: {  }
+name: cases
+label: Cases
+effects:
+  f0ccd787-68af-4834-9212-888a76bcd48e:
+    uuid: f0ccd787-68af-4834-9212-888a76bcd48e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 400

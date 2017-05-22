@@ -1,0 +1,60 @@
+html, body {
+  background-color: $body-background-color;
+  font-family: $default-font;
+  line-height: pxtorem($default-line-height);
+}
+
+a {
+  @extend %transition;
+  color: $link-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+
+  &:before {
+    @extend %transition;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $default-font;
+  font-weight: normal;
+  line-height: 1em;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+ol {
+  counter-reset: olcounter;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+
+    &:before {
+      @extend %fonticon;
+      content: counter(olcounter) '.';
+      counter-increment: olcounter;
+      font-family: $default-font;
+      font-size: $default-font-size;
+      padding: 0 4px;
+    }
+  }
+}

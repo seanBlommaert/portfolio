@@ -1,0 +1,7 @@
+uuid: fd020bee-0ced-48a0-b557-6ae7077ffdf5
+langcode: en
+status: true
+dependencies: {  }
+id: skills
+label: Skills
+behavior_plugins: {  }

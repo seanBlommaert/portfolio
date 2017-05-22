@@ -1,0 +1,22 @@
+uuid: b1a24f11-2f89-42eb-ae68-14cbb3806399
+langcode: en
+status: true
+dependencies:
+  theme:
+    - seanb
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: seanb_local_tasks
+theme: seanb
+region: content
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

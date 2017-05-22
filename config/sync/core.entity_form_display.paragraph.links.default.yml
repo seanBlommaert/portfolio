@@ -1,0 +1,26 @@
+uuid: 11cf3eb9-e91b-460a-ac95-bfd2967bfa23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.links.field_links
+    - paragraphs.paragraphs_type.links
+  module:
+    - link
+id: paragraph.links.default
+targetEntityType: paragraph
+bundle: links
+mode: default
+content:
+  field_links:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,42 @@
+uuid: 645840e7-0526-4477-94ea-a91f6e0108da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_skills
+    - paragraphs.paragraphs_type.skill
+    - paragraphs.paragraphs_type.skills
+  module:
+    - entity_reference_revisions
+id: paragraph.skills.field_skills
+field_name: field_skills
+entity_type: paragraph
+bundle: skills
+label: Skills
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      skill: skill
+    target_bundles_drag_drop:
+      form:
+        weight: 6
+        enabled: false
+      section:
+        weight: 7
+        enabled: false
+      skill:
+        enabled: true
+        weight: 8
+      skills:
+        weight: 9
+        enabled: false
+      text:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

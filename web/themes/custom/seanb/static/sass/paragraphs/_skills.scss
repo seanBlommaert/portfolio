@@ -1,0 +1,22 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 10px;
+
+  .skill {
+    flex: 1 0 calc(33.3% - 20px);
+    margin: 10px;
+    padding: 20px;
+
+    h2 {
+      font-size: $skills-heading-font-size;
+    }
+
+    &:before {
+      display: block;
+      font-size: $skills-icon-font-size;
+      margin-bottom: 20px;
+    }
+  }
+}

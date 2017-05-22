@@ -1,0 +1,30 @@
+uuid: 63e7526e-e028-4f5a-959d-2e1924e1f856
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cases.field_cases
+    - paragraphs.paragraphs_type.cases
+  module:
+    - paragraphs
+id: paragraph.cases.default
+targetEntityType: paragraph
+bundle: cases
+mode: default
+content:
+  field_cases:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

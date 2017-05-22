@@ -1,0 +1,78 @@
+.cases {
+
+  .case {
+    background-color: $cases-bg-color;
+    margin: 0 0 20px;
+    overflow: hidden;
+
+    .image {
+      align-items: center;
+      clear: both;
+      display: flex;
+      float: left;
+      height: 400px;
+      justify-content: center;
+      overflow: hidden;
+      width: 400px;
+
+      img {
+        @extend %transition;
+        flex-shrink: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      &:hover img {
+        height: 105%;
+        width: 105%;
+      }
+    }
+
+    &:nth-child(even) {
+      .image {
+        float: right;
+      }
+    }
+
+    .details {
+      overflow: auto;
+      padding: 40px;
+    }
+
+    h2 {
+      display: inline-block;
+      font-size: $cases-heading-font-size;
+    }
+
+    .year {
+      color: $cases-year-font-color;
+      float: right;
+      font-size: $cases-year-font-size;
+    }
+
+    h3 {
+      color: $cases-role-font-color;
+      font-size: $cases-role-font-size;
+    }
+
+    .tags {
+      border-top: 1px solid $cases-tag-border-color;
+      margin-top: 20px;
+      padding-top: 20px;
+
+      .tag {
+        border: 1px solid $cases-tag-border-color;
+        color: $cases-tag-color;
+        display: inline-block;
+        margin: 0 10px 10px 0;
+        padding: 10px 20px;
+      }
+
+    }
+
+    a {
+      @extend %button-hover;
+      border: 1px solid $button-border-color;
+    }
+  }
+}

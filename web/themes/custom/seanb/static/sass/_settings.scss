@@ -1,0 +1,29 @@
+$debug-mode: false;
+
+// BASIC FONTS:
+$sans: 'Lato', Helvetica, Arial;
+$default-font: $sans;
+
+$default-font-size: 18px;
+$default-line-height: 24px;
+
+$introduction-font-size: 28px;
+
+$navigation-font-size: $default-font-size;
+$navigation-line-height: 30px;
+$navigation-icon-font-size: 20px;
+$navigation-icon-line-height: 30px;
+$navigation-icon-font-size-correction: 19px;
+$navigation-icon-line-height-correction: 31px;
+
+$skills-heading-font-size: 24px;
+$skills-icon-font-size: 40px;
+
+$cases-heading-font-size: 24px;
+$cases-year-font-size: 24px;
+$cases-role-font-size: 16px;
+
+$footer-font-size: $default-font-size;
+$footer-line-height: 30px;
+$footer-icon-font-size: 20px;
+$footer-icon-line-height: 30px;

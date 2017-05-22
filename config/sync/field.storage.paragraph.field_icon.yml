@@ -1,0 +1,63 @@
+uuid: d72c10ce-f10a-494c-8213-8f080ef053f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_icon
+field_name: field_icon
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: cogs
+      label: Cogs
+    -
+      value: question
+      label: Question
+    -
+      value: search
+      label: Search
+    -
+      value: heart
+      label: Heart
+    -
+      value: times
+      label: Times
+    -
+      value: lock
+      label: Lock
+    -
+      value: trophy
+      label: Trophy
+    -
+      value: group
+      label: Group
+    -
+      value: code
+      label: Code
+    -
+      value: integration
+      label: Integration
+    -
+      value: shield
+      label: Shield
+    -
+      value: bug
+      label: Bug
+    -
+      value: architecture
+      label: Architecture
+    -
+      value: consultancy
+      label: Consultancy
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

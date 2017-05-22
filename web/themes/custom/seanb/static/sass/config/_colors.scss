@@ -1,0 +1,156 @@
+// COLOR DEFINITIONS
+$white: #FFFFFF;
+$off-white: #F9F8F8;
+$light-grey: #EFECEC;
+$grey: #dedede;
+$medium-grey: #C1B9B2;
+$dark-grey: #7B7672;
+$light-black: #12130F;
+$black: #11120E;
+$blue: #3D8DD3;
+
+// GENERIC ELEMENTS
+$body-background-color: $off-white;
+$page-background-color: $off-white;
+$page-font-color: $black;
+$link-color: $blue;
+$link-hover-color: $black;
+
+// MESSAGES
+$message-warning: #E5A200;
+$message-status: #4D8F46;
+$message-error: #ff3b3f;
+
+// BUTTONS
+$button-font-color: $black;
+$button-font-hover-color: $off-white;
+$button-background-hover-color: $black;
+$button-border-color: $black;
+
+// NAVIGATION REGION
+$navigation-bg-color: $off-white;
+$navigation-border-color: $light-grey;
+
+$navigation-link-color: $black;
+$navigation-link-hover-color: $off-white;
+$navigation-link-hover-background-color: $black;
+
+$navigation-icon-color: $black;
+$navigation-icon-hover-color: $blue;
+
+$navigation-social-icon-color: $black;
+$navigation-social-icon-hover-color: $blue;
+
+// HEADER
+$page-title-color: $white;
+$page-title-shadow-color: rgba($black, 0.8);
+
+// CASES
+$cases-bg-color: $off-white;
+$cases-year-font-color: $grey;
+$cases-role-font-color: $grey;
+$cases-tag-border-color: $grey;
+
+$cases-tag-color: $black;
+$cases-tag-seperator-color: $grey;
+
+// FORMS
+$form-border-color: $grey;
+$form-background-color: $off-white;
+$form-font-color: $black;
+
+$form-checkbox-border-color: $grey;
+$form-checkbox-border-hover-color: $grey;
+$form-checkbox-background-color: $off-white;
+$form-checkbox-background-hover-color: $off-white;
+$form-checkbox-font-color: $black;
+$form-checkbox-font-hover-color: $black;
+
+$form-button-border-disabled-color: $grey;
+$form-button-background-disabled-color: transparent;
+$form-button-font-disabled-color: $grey;
+
+$form-disabled-background-color: $grey;
+$form-disabled-border-color: $grey;
+$form-disabled-font-color: $dark-grey;
+
+// FOOTER REGION
+$footer-bg-color: $black;
+$footer-link-color: $medium-grey;
+$footer-link-hover-color: $white;
+
+// CUSTOM VARIABLES
+$chathamsblue: #154273;
+$lochmara: #007BC7;
+$linkwater: #D9EBF7;
+$athensgrey: #EAEBEE;
+$porcelain: #F3F5F6;
+$silver: #C7C7C7;
+$tundora: #474747;
+
+// SOCIAL COLORS
+$phone: $blue;
+$mail: $blue;
+$drupal: #0678be;
+$twitter: #55acee;
+$googleplus: #dd4b39;
+$youtube: #bb0000;
+$linkedin: #007bb5;
+$instagram: #125688;
+$whatsapp: #4dc247;
+$pinterest: #cb2027;
+$vine: #00bf8f;
+$snapchat: #fffc00;
+$flickr: #ff0084;
+$tumblr: #32506d;
+$vimeo: #45bbff;
+$foursquare: #0072b1;
+$spotify: #00e461;
+$github: #000000;
+$behance: #1769ff;
+$rss: #ff6600;
+
+// normal, hover, visited
+$bodycopy-link-colors: $lochmara, $chathamsblue, $chathamsblue;
+$checked-color: #007BC7;
+
+$focus-ring-color: #FFA500;
+
+$button-bg-color: #CB4E4E;
+$link-button-bg-color: #0E83CD;
+
+// INPUTS
+$webkit-autofill-color: #EBF5FA;
+$error-red: $message-error;
+
+// Below are variables that have been preset in the base theme,
+// if you need to change them, overrule them here
+// ==========================================================================
+
+// MARK TAG
+// $mark-background-color: yellow
+// $mark-font-color: black
+
+// BORDER RADIUS (used on inputs and buttons)
+// $button-border-radius: 2px
+// $input-border-radius: 2px
+
+// INPUTS
+// $input-focus-border-color: royalblue
+// $input-border-radius: $border-radius
+// $webkit-autofill-color: #f0feff
+
+// BUTTONS
+// $button-border-color:       silver
+// $button-border-hover-color: orangered
+// $button-font-color:         darken( $button-border-hover-color, 10% )
+// $button-border-radius:      $border-radius
+// $button-font-size:          $default-font-size
+// $button-background-color:   whitesmoke
+
+// FIELDSET
+// $fieldset-border-color:     $button-border-color
+
+// RADIO & CHECKBOXES
+// $checked-color:             $input-focus-border-color
+// $check-icon-color:          grey

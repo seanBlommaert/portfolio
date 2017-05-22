@@ -1,0 +1,115 @@
+div.navigation {
+  animation: blockSlideInFromTop 0.5s ease-out 0.5s 1 forwards;
+  background-color: $navigation-bg-color;
+  border-bottom: 1px solid $navigation-border-color;
+  opacity: 0;
+  padding: 20px 0;
+  position: fixed;
+  text-align: right;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  nav {
+    display: inline-block;
+
+    ul {
+      @include inline-list;
+
+      li {
+        margin: 0 5px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        color: $navigation-link-color;
+        font-size: $navigation-font-size;
+        line-height: $navigation-line-height;
+        padding: 5px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $navigation-link-hover-color;
+        }
+      }
+
+    }
+  }
+
+  .mainnavigation {
+    float: left;
+    margin-right: 10px;
+
+    a {
+      @extend %button-hover;
+    }
+  }
+
+  .contact, .social {
+    @extend %social-hovers;
+
+    a {
+      align-items: center;
+      border-radius: 50%;
+      display: inline-flex;
+      font-size: 0;
+      height: 25px;
+      justify-content: center;
+      width: 25px;
+
+      &:before {
+        color: $navigation-icon-color;
+        font-size: $navigation-icon-font-size;
+        line-height: $navigation-icon-line-height;
+      }
+
+      &:hover:before {
+        color: $navigation-icon-hover-color;
+      }
+
+      &.mail:before {
+        font-size: $navigation-icon-font-size-correction;
+        line-height: $navigation-icon-line-height-correction;
+      }
+    }
+  }
+
+  .contact {
+    float: left;
+  }
+
+  .social {
+    margin-left: 20px;
+
+    a {
+      &:before {
+        color: $navigation-social-icon-color;
+      }
+
+      &:hover:before {
+        color: $navigation-social-icon-hover-color;
+      }
+    }
+  }
+
+}
+
+body.toolbar-fixed {
+  div.navigation {
+    top: 39px;
+  }
+
+  &.toolbar-horizontal.toolbar-tray-open {
+    div.navigation {
+      top: 80px;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+uuid: dbf20437-9735-4aee-afcf-083b6df84c93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.case.field_description
+    - field.field.paragraph.case.field_image
+    - field.field.paragraph.case.field_links
+    - field.field.paragraph.case.field_role
+    - field.field.paragraph.case.field_tags
+    - field.field.paragraph.case.field_title
+    - field.field.paragraph.case.field_year
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.case
+  module:
+    - image
+    - link
+    - text
+id: paragraph.case.default
+targetEntityType: paragraph
+bundle: case
+mode: default
+content:
+  field_description:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_links:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_role:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tags:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_year:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

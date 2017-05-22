@@ -1,0 +1,23 @@
+uuid: fb2bf49b-4c18-4b6c-9a55-241b5b0baa28
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - fortytwo
+id: fortytwo_entityviewcontent
+theme: fortytwo
+region: header
+weight: 0
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Entity view (Content - Header)'
+  provider: ctools
+  label_display: '0'
+  view_mode: header
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

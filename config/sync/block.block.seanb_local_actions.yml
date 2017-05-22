@@ -1,0 +1,20 @@
+uuid: 8271aa12-03c2-4c39-8c59-ae57ce924648
+langcode: en
+status: true
+dependencies:
+  theme:
+    - seanb
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: seanb_local_actions
+theme: seanb
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
