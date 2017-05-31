@@ -1,0 +1,33 @@
+$default-line-height: pxtorem(24px);
+
+$heading1-font-size: pxtorem(48px);
+$heading2-font-size: pxtorem(32px);
+$heading3-font-size: pxtorem(24px);
+$heading4-font-size: pxtorem(18px);
+
+$header-title-font-size: pxtorem(42px);
+$header-subtitle-font-size: pxtorem(62px);
+$header-title-font-size-mobile: pxtorem(28px);
+$header-subtitle-font-size-mobile: pxtorem(36px);
+
+$introduction-font-size: pxtorem(28px);
+
+$navigation-font-size: pxtorem($default-font-size);
+$navigation-line-height: 30px;
+$navigation-icon-font-size: 20px;
+$navigation-icon-line-height: 30px;
+$navigation-icon-font-size-correction: 19px;
+$navigation-icon-line-height-correction: 31px;
+
+$skills-heading-font-size: pxtorem(24px);
+$skills-icon-font-size: pxtorem(40px);
+
+$cases-heading-font-size: pxtorem(24px);
+$cases-year-font-size: pxtorem(24px);
+$cases-role-font-size: pxtorem(16px);
+
+$footer-font-size: pxtorem($default-font-size);
+$footer-font-size-mobile: pxtorem(14px);
+$footer-line-height: pxtorem(30px);
+$footer-icon-font-size: pxtorem(20px);
+$footer-icon-line-height: pxtorem(30px);

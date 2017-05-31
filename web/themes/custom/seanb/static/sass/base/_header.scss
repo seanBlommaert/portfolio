@@ -39,12 +39,25 @@ header {
     }
 
     h1 {
-      font-size: 32px;
+      font-size: $header-title-font-size;
       font-weight: 100;
     }
 
     h2 {
-      font-size: 48px;
+      font-size: $header-subtitle-font-size;
+      margin-bottom: 20px;
+    }
+
+    a {
+      @extend %button;
+      border: 1px solid $header-link-border-color;
+      color: $header-link-color;
+      margin: 10px;
+
+      &:hover {
+        background-color: $header-link-background-hover-color;
+        color: $header-link-hover-color;
+      }
     }
   }
 
@@ -68,6 +81,20 @@ header {
       @include icon('arrow-down');
       color: $page-title-color;
       font-size: 16px;
+    }
+  }
+}
+
+@media #{$mobile} {
+  header {
+    .title-wrapper {
+      h1 {
+        font-size: $header-title-font-size-mobile;
+      }
+
+      h2 {
+        font-size: $header-subtitle-font-size-mobile;
+      }
     }
   }
 }

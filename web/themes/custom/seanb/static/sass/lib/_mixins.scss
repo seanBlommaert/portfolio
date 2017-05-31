@@ -8,7 +8,7 @@
 
 %transition {
   transition: color 0.2s ease-in-out;
-  transition-property: color, background-color, border, text-decoration, width, height;
+  transition-property: color, background-color, background-image, background-position, border, text-decoration, width, height;
 }
 
 %social-hovers {
@@ -29,7 +29,7 @@
   }
 }
 
-%button-hover {
+%button {
   color: $button-font-color;
   cursor: pointer;
   display: inline-block;
@@ -39,23 +39,22 @@
   text-decoration: none;
   z-index: 1;
 
-  &:before {
-    background-color: $button-background-hover-color;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: 0.2s ease;
-    width: 0;
-    z-index: -1;
-  }
-
   &:hover {
+    background-color: $button-background-hover-color;
     color: $button-font-hover-color;
   }
 
-  &:hover:before {
-    width: 100%;
+  @media #{$mobile} {
+    padding: 5px 10px;
   }
+}
+
+%fonticon {
+  font-family: 'icomoon';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: initial;
+  speak: none;
+  text-transform: none;
 }

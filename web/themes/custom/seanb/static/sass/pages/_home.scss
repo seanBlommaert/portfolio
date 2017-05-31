@@ -28,3 +28,17 @@
     }
   }
 }
+
+@media #{$mobile} {
+  .front {
+    main.content {
+      section {
+        padding: 40px 0;
+
+        h1 {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}

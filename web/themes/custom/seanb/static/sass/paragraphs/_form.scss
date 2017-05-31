@@ -25,3 +25,19 @@
     width: 50%;
   }
 }
+
+@media #{$mobile} {
+  .form {
+    .text {
+      float: none;
+      width: 100%;
+    }
+
+    form {
+      border-left: 0;
+      margin-top: 40px;
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+}

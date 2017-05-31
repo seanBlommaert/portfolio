@@ -32,7 +32,6 @@
           $(this).addClass('view-fade-in');
         }
       });
-
     },
   };
 

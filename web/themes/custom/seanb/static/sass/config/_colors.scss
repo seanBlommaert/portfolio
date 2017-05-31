@@ -23,17 +23,16 @@ $message-error: #ff3b3f;
 
 // BUTTONS
 $button-font-color: $black;
+$button-border-color: $black;
 $button-font-hover-color: $off-white;
 $button-background-hover-color: $black;
-$button-border-color: $black;
 
 // NAVIGATION REGION
 $navigation-bg-color: $off-white;
 $navigation-border-color: $light-grey;
 
 $navigation-link-color: $black;
-$navigation-link-hover-color: $off-white;
-$navigation-link-hover-background-color: $black;
+$navigation-link-border-color: $black;
 
 $navigation-icon-color: $black;
 $navigation-icon-hover-color: $blue;
@@ -44,6 +43,10 @@ $navigation-social-icon-hover-color: $blue;
 // HEADER
 $page-title-color: $white;
 $page-title-shadow-color: rgba($black, 0.8);
+$header-link-color: $white;
+$header-link-border-color: $white;
+$header-link-hover-color: $black;
+$header-link-background-hover-color: $white;
 
 // CASES
 $cases-bg-color: $off-white;

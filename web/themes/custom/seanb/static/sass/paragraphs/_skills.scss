@@ -20,3 +20,23 @@
     }
   }
 }
+
+@media #{$mobile} {
+  .skills {
+    .skill {
+      flex: 1 0 calc(50% - 10px);
+      margin: 5px;
+      padding: 10px;
+    }
+  }
+}
+
+@media #{$mobile-p} {
+  body {
+    .skills {
+      .skill {
+        flex: 1 0 calc(100% - 10px);
+      }
+    }
+  }
+}

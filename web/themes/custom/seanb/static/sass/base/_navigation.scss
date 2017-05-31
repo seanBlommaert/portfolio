@@ -35,10 +35,6 @@ div.navigation {
         padding: 5px 10px;
         text-decoration: none;
         text-transform: uppercase;
-
-        &:hover {
-          color: $navigation-link-hover-color;
-        }
       }
 
     }
@@ -49,7 +45,7 @@ div.navigation {
     margin-right: 10px;
 
     a {
-      @extend %button-hover;
+      @extend %button;
     }
   }
 
@@ -88,6 +84,7 @@ div.navigation {
 
   .social {
     margin-left: 20px;
+    padding: 10px 20px;
 
     a {
       &:before {
@@ -110,6 +107,36 @@ body.toolbar-fixed {
   &.toolbar-horizontal.toolbar-tray-open {
     div.navigation {
       top: 80px;
+    }
+  }
+}
+
+@media #{$mobile} {
+  div.navigation {
+    padding: 10px 0;
+
+    .mainnavigation {
+      margin-right: 0;
+
+      a {
+        margin-right: 0;
+        padding: 5px 10px;
+      }
+    }
+
+    .social {
+      margin-left: 10px;
+      padding: 5px 0;
+    }
+  }
+}
+
+@media #{$mobile-p} {
+  div.navigation {
+    text-align: center;
+
+    .mainnavigation {
+      float: none;
     }
   }
 }

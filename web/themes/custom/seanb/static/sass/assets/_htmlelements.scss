@@ -1,6 +1,7 @@
 html, body {
   background-color: $body-background-color;
   font-family: $default-font;
+  font-size: $default-font-size;
   line-height: pxtorem($default-line-height);
 }
 
@@ -28,15 +29,19 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: $heading1-font-size;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: $heading2-font-size;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: $heading3-font-size;
+}
+
+h4 {
+  font-size: $heading4-font-size;
 }
 
 ol {
@@ -56,5 +61,12 @@ ol {
       font-size: $default-font-size;
       padding: 0 4px;
     }
+  }
+}
+
+
+@media #{$mobile} {
+  html, body {
+    font-size: $default-font-size-mobile;
   }
 }

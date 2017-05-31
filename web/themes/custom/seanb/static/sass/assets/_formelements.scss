@@ -3,7 +3,7 @@ label[for*='disabled'] {
 }
 
 @mixin button {
-  @extend %button-hover;
+  @extend %button;
   border: 1px solid $button-border-color;
   font-family: $default-font;
   font-style: normal;
@@ -24,6 +24,7 @@ input[type='submit'],
 input[type='button'],
 a.button {
   @include button;
+  @extend %transition;
   margin-right: 10px;
 }
 
@@ -83,7 +84,7 @@ fieldset {
         &:before {
           @include arrow('down');
           display: inline-block;
-          font-size: perc(12px);
+          font-size: pxtorem(12px);
           height: 14px;
           width: 14px;
         }

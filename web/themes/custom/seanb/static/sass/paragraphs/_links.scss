@@ -2,7 +2,7 @@
   margin-top: 40px;
 
   a {
-    @extend %button-hover;
+    @extend %button;
     border: 1px solid $button-border-color;
   }
 }

@@ -103,7 +103,7 @@ __Production__
 Make sure the excluded config is not removed on the production environment with the following workflow:
 
 - Export excluded config:
-```drush -y config-split-export excluded```
+```drush -y csex excluded```
 - Import configuration:
 ```drush cim```
 

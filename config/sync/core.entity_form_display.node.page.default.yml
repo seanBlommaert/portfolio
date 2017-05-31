@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_content
     - field.field.node.page.field_image
+    - field.field.node.page.field_links
     - field.field.node.page.field_meta
     - field.field.node.page.field_subtitle
     - field.field.node.page.field_title
@@ -13,6 +14,7 @@ dependencies:
   module:
     - field_group
     - image
+    - link
     - metatag
     - paragraphs
     - path
@@ -23,6 +25,7 @@ third_party_settings:
         - field_image
         - field_title
         - field_subtitle
+        - field_links
       parent_name: ''
       weight: 1
       format_type: fieldset
@@ -62,6 +65,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_links:
+    weight: 10
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_meta:
     weight: 8

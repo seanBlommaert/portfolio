@@ -21,10 +21,9 @@ $grid-gutter-width: 12;
       @include visualize-grid;
     }
 
-    .navigation nav,
-    footer,
-    header,
-    div.wrapper {
+    .navigation .navigation-inner,
+    section .section-inner,
+    footer nav {
       width: calc-grid() + px;
     }
 
@@ -53,10 +52,9 @@ $grid-gutter-width: 12;
       @include visualize-grid;
     }
 
-    nav,
-    header,
-    footer,
-    div.wrapper {
+    .navigation .navigation-inner,
+    section .section-inner,
+    footer nav {
       min-width: calc-grid() + px;
       width: calc-fluid-grid($grid-columns * 2);
     }
