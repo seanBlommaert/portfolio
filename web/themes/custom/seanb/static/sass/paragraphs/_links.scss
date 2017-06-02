@@ -4,5 +4,16 @@
   a {
     @extend %button;
     border: 1px solid $button-border-color;
+    margin: 10px;
+  }
+}
+
+@media #{$mobile} {
+  .links {
+    margin-top: 30px;
+
+    a {
+      margin: 5px;
+    }
   }
 }

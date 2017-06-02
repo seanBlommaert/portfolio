@@ -46,18 +46,18 @@
  */
 #}
 
-{% if page.navigation %}
-<div class="navigation">
-  <div class="navigation-inner">
-    {{ page.navigation }}
-  </div>
-</div>
-{% endif %}
 <div class="page-wrapper">
   <header>
     {{ page.header }}
     <a href="#about" class="content-scroll">Scroll to content</a>
   </header>
+  {% if page.navigation %}
+  <div class="navigation">
+    <div class="navigation-inner">
+      {{ page.navigation }}
+    </div>
+  </div>
+  {% endif %}
   <div class="wrapper">
     {{ page.breadcrumb }}
     <main class="content column">

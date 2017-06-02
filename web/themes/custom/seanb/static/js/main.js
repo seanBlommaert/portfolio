@@ -22,8 +22,8 @@
       // Scroll animation for anchors.
       $('a[href*=\\#]', context).on('click', function (event) {
         event.preventDefault();
-        console.log($(this.hash).offset().top);
-        $('.page-wrapper').animate({ scrollTop: $(this.hash).offset().top - $('div.navigation').height() }, 500);
+        var $body = $('body');
+        $($body).animate({ scrollTop: $(this.hash).offset().top - $('div.navigation').height() }, 500);
       });
 
       // Add class to items in viewport for loading animation.

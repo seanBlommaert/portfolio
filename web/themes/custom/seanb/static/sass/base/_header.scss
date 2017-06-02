@@ -1,35 +1,44 @@
 header {
   align-items: center;
   display: flex;
+  flex-direction: row;
   height: 100vh;
   justify-content: center;
+  min-height: 360px;
   position: relative;
-  transform-origin-x: 100%;
-  transform-style: preserve-3d;
 
   &:before {
     background-color: $black;
     content: ' ';
     height: 100%;
+    left: 0;
     opacity: 0.4;
     position: absolute;
+    top: 0;
     width: 100%;
     z-index: 1;
   }
 
-  img {
-    height: auto;
-    min-height: 100vh;
-    min-width: 100%;
-    position: absolute;
-    transform: translateZ(-1px) scale(2);
-    width: auto;
+  .hero-image {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    img {
+      height: auto;
+      left: 0;
+      min-height: 100vh;
+      min-width: 100vw;
+      width: auto;
+      z-index: -1;
+    }
   }
 
   .title-wrapper {
     animation: blockSlideInFromLeft 1s ease-out 1s 1 forwards;
     opacity: 0;
-    position: absolute;
+    position: relative;
     text-align: center;
     z-index: 2;
 
@@ -71,6 +80,7 @@ header {
     font-size: 0;
     height: 35px;
     justify-content: center;
+    left: calc(50% - 20px);
     opacity: 0;
     position: absolute;
     text-decoration: none;

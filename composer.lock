@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7832236d44ff2a841f14d332e6f20fc9",
+    "content-hash": "6fbff5f793d8df5e857767ac989d9431",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1381,11 +1381,17 @@
         },
         {
             "name": "drupal/config_split",
-            "version": "dev-1.x",
+            "version": "1.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/config_split",
-                "reference": "fb6d009"
+                "reference": "8.x-1.0-beta5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_split-8.x-1.0-beta5.zip",
+                "reference": null,
+                "shasum": "754654d844cfb7d62178716bd9df81a662e9b38d"
             },
             "require": {
                 "drupal/config_filter": "*",
@@ -1397,8 +1403,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta5+1-dev",
-                    "datestamp": "1494175985"
+                    "version": "8.x-1.0-beta5",
+                    "datestamp": "1494175684"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1427,8 +1433,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/config_split",
                 "issues": "https://www.drupal.org/project/issues/config_split"
-            },
-            "time": "2017-03-30 08:05:50"
+            }
         },
         {
             "name": "drupal/config_update",
@@ -2274,6 +2279,44 @@
             }
         },
         {
+            "name": "drupal/google_tag",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/google_tag",
+                "reference": "dd82cc7"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1494121087"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "solotandem",
+                    "homepage": "https://www.drupal.org/user/240748"
+                }
+            ],
+            "description": "Allows your website analytics to be managed using Google Tag Manager.",
+            "homepage": "https://www.drupal.org/project/google_tag",
+            "support": {
+                "source": "http://cgit.drupalcode.org/google_tag"
+            },
+            "time": "2017-05-08 17:36:45"
+        },
+        {
             "name": "drupal/honeypot",
             "version": "1.25.0",
             "source": {
@@ -2729,11 +2772,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "dev-5.x",
+            "version": "5.0.0-beta13",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "2347e60"
+                "reference": "8.x-5.0-beta13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta13.zip",
+                "reference": null,
+                "shasum": "d71e4cc7a1820729e6efa26d07c862e3db364bb1"
             },
             "require": {
                 "drupal/core": "*"
@@ -2744,8 +2793,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-beta12+90-dev",
-                    "datestamp": "1496265243"
+                    "version": "8.x-5.0-beta13",
+                    "datestamp": "1496266200"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2796,8 +2845,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/webform",
                 "issues": "https://drupal.org/project/issues/webform"
-            },
-            "time": "2017-03-31 11:38:48"
+            }
         },
         {
             "name": "drush/drush",
@@ -7191,8 +7239,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/config_split": 20,
-        "drupal/webform": 20
+        "drupal/google_tag": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
