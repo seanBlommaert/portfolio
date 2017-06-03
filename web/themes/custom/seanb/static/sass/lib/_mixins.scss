@@ -43,10 +43,6 @@
     background-color: $button-background-hover-color;
     color: $button-font-hover-color;
   }
-
-  @media #{$mobile} {
-    padding: 5px 10px;
-  }
 }
 
 %fonticon {
