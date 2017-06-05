@@ -19,6 +19,11 @@
         };
       }
 
+      $(window).once().bind('scroll', function() {
+        var windowTop = $(window).scrollTop();
+        $('header .hero-image').css({'top': (((windowTop * 0.4) * -1) - 130) + 'px'});
+      });
+
       // Scroll animation for anchors.
       $('a[href*=\\#]', context).on('click', function (event) {
         event.preventDefault();

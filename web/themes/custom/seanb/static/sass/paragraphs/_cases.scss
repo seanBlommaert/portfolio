@@ -19,13 +19,13 @@
         @extend %transition;
         flex-shrink: 0;
         height: 100%;
-        width: 100%;
+        width: auto;
       }
     }
 
     &:hover .image img {
       height: 105%;
-      width: 105%;
+      width: auto;
     }
 
     &:nth-child(even) {
@@ -132,15 +132,6 @@
         }
       }
 
-      &:hover .image img {
-        width: auto;
-      }
-
-      &:hover .image img {
-        height: auto;
-        width: auto;
-      }
-
       .details {
         padding: 20px;
       }
@@ -163,10 +154,6 @@
         img {
           width: auto;
         }
-      }
-
-      &:hover .image img {
-        width: auto;
       }
     }
   }
