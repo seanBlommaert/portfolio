@@ -1,5 +1,17 @@
 <?php
+
 /**
  * @file
  * Custom theme implementation file.
  */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function seanb_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'user_login_form') {
+    unset($form['name']['#description'], $form['pass']['#description']);
+  }
+}

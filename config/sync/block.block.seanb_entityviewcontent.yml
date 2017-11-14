@@ -4,12 +4,13 @@ status: true
 dependencies:
   module:
     - ctools
+    - system
   theme:
     - seanb
 id: seanb_entityviewcontent
 theme: seanb
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: 'entity_view:node'
 settings:
@@ -20,4 +21,9 @@ settings:
   view_mode: header
   context_mapping:
     entity: '@node.node_route_context:node'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

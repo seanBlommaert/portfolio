@@ -32,6 +32,15 @@ body {
     width: 100%;
   }
 
+  &:not(.front),
+  &:not(.node--type-page) {
+    main.content {
+      margin: 0 auto;
+      padding: 0 10px;
+      width: calc-grid() + px;
+    }
+  }
+
   // 2 sidebar layouts
   &.two-sidebars {
     &.columns-middle .content.column,

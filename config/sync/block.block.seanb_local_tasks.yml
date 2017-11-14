@@ -9,7 +9,7 @@ _core:
 id: seanb_local_tasks
 theme: seanb
 region: content
-weight: -3
+weight: -1
 provider: null
 plugin: local_tasks_block
 settings:

@@ -27,6 +27,13 @@ $grid-gutter-width: 30;
       width: calc-grid() + px;
     }
 
+    &:not(.front),
+    &:not(.node--type-page) {
+      main.content {
+        width: calc-grid() + px;
+      }
+    }
+
     // 2 sidebar layouts
     &.two-sidebars {
       &.columns-middle .content.column,

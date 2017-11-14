@@ -90,6 +90,13 @@ $grid-gutter-width: 20;
       width: calc-fluid-grid($grid-columns * 2);
     }
 
+    &:not(.front),
+    &:not(.node--type-page) {
+      main.content {
+        width: calc-fluid-grid($grid-columns * 2);
+      }
+    }
+
     // 2 sidebar layouts
     &.two-sidebars {
       &.columns-right .content.column {

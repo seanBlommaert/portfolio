@@ -58,6 +58,13 @@ $grid-gutter-width: 12;
       width: calc-fluid-grid($grid-columns * 2);
     }
 
+    &:not(.front),
+    &:not(.node--type-page) {
+      main.content {
+        width: calc-fluid-grid($grid-columns * 2);
+      }
+    }
+
     // 2 sidebar layouts
     &.two-sidebars {
       .sidebar.first,

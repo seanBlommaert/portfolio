@@ -47,10 +47,12 @@
 #}
 
 <div class="page-wrapper">
+  {% if page.header %}
   <header>
     {{ page.header }}
     <a href="#about" class="content-scroll">Scroll to content</a>
   </header>
+  {% endif %}
   {% if page.navigation %}
   <div class="navigation">
     <div class="navigation-inner">

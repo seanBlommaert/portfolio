@@ -9,6 +9,7 @@ div.alert {
   border: 0;
   color: $white;
   padding: pxtorem(10px);
+  margin-bottom: pxtorem(20px);
 
   .krumo-root {
     color: $black;
@@ -17,6 +18,7 @@ div.alert {
   > ul {
     display: inline-block;
     margin: 0;
+    width: calc(100% - 40px);
   }
 
   &:before {
@@ -60,4 +62,8 @@ p.intro {
   min-height: 300px;
   overflow: hidden;
   z-index: 2;
+}
+
+.ajax-progress-throbber {
+  display: none;
 }

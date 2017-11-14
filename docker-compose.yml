@@ -8,38 +8,44 @@ services:
   php:
     image: wodby/drupal-php:${PHP_WODBY_TAG}
     environment:
-      PHP_DOCROOT: web # Relative path inside the /var/www/html/ directory.
+      PHP_DOCROOT: ${DOCROOT} # Relative path inside the /var/www/html/ directory.
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog.dev:1025
-      PHP_XDEBUG_ENABLED: 1
-      PHP_XDEBUG_AUTOSTART: 1
+      PHP_FPM_MAX_CHILDREN: 16
+      PHP_XDEBUG: 1
+      PHP_XDEBUG_DEFAULT_ENABLE: 1              # Renamed from PHP_XDEBUG_ENABLED in latest version.
+      PHP_XDEBUG_REMOTE_AUTOSTART: 1            # Renamed from PHP_XDEBUG_AUTOSTART in latest version.
       PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting bellow
       PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # You will also need to 'sudo ifconfig lo0 alias 10.254.254.254'
+      PHP_XDEBUG_MAX_NESTING_LEVEL: 2048
+      PHP_IDE_CONFIG: serverName=${NAME}.dev
     volumes:
-#      - ./:/var/www/html
-      - seanb-sync:/var/www/html:nocopy # Replace volume to this to use docker-sync for macOS users
+      - ./:/var/www/html:delegated
     external_links:
       - mysql
       - dockerdns
-    network_mode: bridge # Expose to other docker-compose networks in order to use mysql etc.
+    networks:
+      - default
+      - commonapps_default
     dns:
      - ${DOCKERDNS}
 
   nginx:
     container_name: ${NAME} # without .dev if using .dev dns
-    image: wodby/drupal-nginx:1.10-1.1.0
+    image: wodby/drupal-nginx:8-1.13
     environment:
       VIRTUAL_HOST: ${NAME}.dev # This tell global proxy about this container.
+      NGINX_BACKEND_HOST: php
       NGINX_SERVER_NAME: ${NAME}.dev
-      NGINX_UPSTREAM_NAME: php
-      NGINX_DOCROOT: ${DOCROOT} # Relative path inside the /var/www/html/ directory.
+      NGINX_SERVER_ROOT: /var/www/html/${DOCROOT}
       DRUPAL_VERSION: ${DRUPAL_VERSION}  # Allowed: 7, 8.
     volumes:
-#      - ./:/var/www/html
-       - seanb-sync:/var/www/html:nocopy
-    links:
+      - ./:/var/www/html:delegated
+    depends_on:
       - php
-    network_mode: bridge # Expose to other docker-compose networks in order to use mysql etc.
+    networks:
+      - default
+      - commonapps_default
 
-volumes:
-  seanb-sync:
+networks:
+  commonapps_default:
     external: true

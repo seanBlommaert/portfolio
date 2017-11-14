@@ -1,7 +1,0 @@
-version: "2"
-
-syncs:
-  seanb-sync:
-    src: './'
-    sync_excludes: ['Gemfile.lock', 'Gemfile', 'config.rb', '.sass-cache/', 'sass/', 'sass-cache/', 'composer.json' , 'bower.json', 'package.json', 'Gruntfile*', 'bower_components/', 'node_modules/', '.gitignore', '.git/', '*.coffee', '*.scss', '*.sass', '.idea/', '.DS_Store']
-    sync_strategy: 'unison'

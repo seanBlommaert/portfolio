@@ -12,11 +12,11 @@ Follow the instruction on Github to set up the generic containers like MySQL and
 
 - Start containers:
 ```
-export DOCKERDNS=$(docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" dockerdns); docker-sync start --daemon; docker-compose up -d
+export DOCKERDNS=$(docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" dockerdns); docker-compose up -d
 ```
 - Stop container:
 ```
-docker-compose down; docker-sync stop
+docker-compose down
 ```
 - Execute commands in PHP container:
 ```

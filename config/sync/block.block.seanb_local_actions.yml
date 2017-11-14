@@ -9,7 +9,7 @@ _core:
 id: seanb_local_actions
 theme: seanb
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: local_actions_block
 settings:
