@@ -1,0 +1,25 @@
+uuid: f2e3f146-4b99-4a63-adf6-3e2c32959ab0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seanb
+id: pagetitle
+theme: seanb
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

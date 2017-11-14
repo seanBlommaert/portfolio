@@ -1,0 +1,14 @@
+body:not(.front),
+body:not(.node--type-page) {
+
+  div.wrapper main.content.column {
+    margin-bottom: 40px;
+    margin-top: 90px;
+  }
+
+  h1 {
+    padding: pxtorem(40px) 0;
+    text-align: center;
+  }
+
+}
