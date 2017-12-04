@@ -36,6 +36,5 @@
  * @see template_preprocess_field()
  */
 #}
-<div class="hero-image">
-  {{ items|first.content }}
+<div class="hero-image" style="background-image: url({{ url('<front>') }}{{ items|first.content['#item'].entity.uri.value|image_style('hero')|trim('/') }});">
 </div>

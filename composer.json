@@ -40,6 +40,7 @@
         "drupal/pathauto": "1.0.0",
         "drupal/scheduled_updates": "1.0.0-alpha6",
         "drupal/token": "1.0.0",
+        "drupal/twig_tweak": "2.0.0-rc1",
         "drupal/webform": "5.0.0-beta23",
         "drupal/fortytwo": "2.5.0"
     },

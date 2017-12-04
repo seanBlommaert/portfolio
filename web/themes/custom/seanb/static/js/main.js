@@ -19,11 +19,6 @@
         };
       }
 
-      $(window).once().on('scroll', function() {
-        var windowTop = $(window).scrollTop();
-        $('header .hero-image').css({'top': (((windowTop * 0.4) * -1) - 130) + 'px'});
-      });
-
       // Scroll animation for anchors.
       var $page = $('html, body', context);
       var navigation_height = $('div.navigation').height();
@@ -38,7 +33,7 @@
           $(this).addClass('view-fade-in');
         }
       });
-    }
+    },
   };
 
 })(jQuery, Drupal, this, this.document);

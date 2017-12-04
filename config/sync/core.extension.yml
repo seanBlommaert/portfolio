@@ -41,6 +41,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  twig_tweak: 0
   user: 0
   views: 0
   webform: 0

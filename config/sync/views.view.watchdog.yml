@@ -663,7 +663,7 @@ display:
           tokenize: false
           content:
             value: 'No log messages available.'
-            format: basic_html
+            format: filtered_html
           plugin_id: text
       relationships:
         uid:

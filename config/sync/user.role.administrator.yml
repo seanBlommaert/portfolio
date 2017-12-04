@@ -18,7 +18,6 @@ permissions:
   - 'access site reports'
   - 'access toolbar'
   - 'access user profiles'
-  - 'access webprofiler'
   - 'administer account settings'
   - 'administer blocks'
   - 'administer configuration split'
@@ -85,4 +84,3 @@ permissions:
   - 'view own unpublished content'
   - 'view scheduled update entities'
   - 'view the administration theme'
-  - 'view webprofiler toolbar'

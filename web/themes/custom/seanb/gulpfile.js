@@ -60,18 +60,10 @@ gulp.task('js', function () {
 });
 
 /**
- * @task clean
- * Clean the dist folder.
- */
-gulp.task('clean', function () {
-  return del(['static/css/*', 'static/js/*']);
-});
-
-/**
  * @task watch
  * Watch files and do stuff.
  */
-gulp.task('watch', ['clean', 'sass-compile', 'js'], function () {
+gulp.task('watch', ['sass-compile', 'js'], function () {
   gulp.watch('static/sass/**/*.+(scss|sass)', ['sass-compile']);
   gulp.watch('static/js/**/*.js', ['js']);
 });

@@ -20,20 +20,14 @@ header {
   }
 
   .hero-image {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: fixed;
-    top: -130px;
-    img {
-      height: auto;
-      left: 0;
-      min-height: 100vh;
-      min-width: 100vw;
-      width: auto;
-      z-index: -1;
-    }
+    background-position-y: -130px;
+    background-size: cover;
+    display: block;
+    height: 100vh;
+    position: absolute;
+    transition: 0s linear;
+    transition-property: background-position;
+    width: 100vw;
   }
 
   .title-wrapper {
