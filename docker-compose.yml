@@ -9,7 +9,7 @@ services:
     image: wodby/drupal-php:${PHP_WODBY_TAG}
     environment:
       PHP_DOCROOT: ${DOCROOT} # Relative path inside the /var/www/html/ directory.
-      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog.dev:1025
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog.develop:1025
       PHP_FPM_MAX_CHILDREN: 16
       PHP_XDEBUG: 1
       PHP_XDEBUG_DEFAULT_ENABLE: 1              # Renamed from PHP_XDEBUG_ENABLED in latest version.
@@ -17,7 +17,7 @@ services:
       PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting bellow
       PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # You will also need to 'sudo ifconfig lo0 alias 10.254.254.254'
       PHP_XDEBUG_MAX_NESTING_LEVEL: 2048
-      PHP_IDE_CONFIG: serverName=${NAME}.dev
+      PHP_IDE_CONFIG: serverName=${NAME}.develop
     volumes:
       - ./:/var/www/html:delegated
     external_links:
@@ -30,12 +30,12 @@ services:
      - ${DOCKERDNS}
 
   nginx:
-    container_name: ${NAME} # without .dev if using .dev dns
+    container_name: ${NAME} # without .develop if using .develop dns
     image: wodby/drupal-nginx:8-1.13
     environment:
-      VIRTUAL_HOST: ${NAME}.dev # This tell global proxy about this container.
+      VIRTUAL_HOST: ${NAME}.develop # This tell global proxy about this container.
       NGINX_BACKEND_HOST: php
-      NGINX_SERVER_NAME: ${NAME}.dev
+      NGINX_SERVER_NAME: ${NAME}.develop
       NGINX_SERVER_ROOT: /var/www/html/${DOCROOT}
       DRUPAL_VERSION: ${DRUPAL_VERSION}  # Allowed: 7, 8.
     volumes:
