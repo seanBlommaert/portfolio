@@ -21,7 +21,6 @@ web/index.php
 web/update.php
 web/sites/default/default.services.yml
 web/sites/default/default.settings.php
-web/sites/default/services.yml
 web/sites/development.services.yml
 web/sites/example.settings.local.php
 web/sites/example.sites.php
@@ -40,8 +39,10 @@ config/excluded/*
 !config/excluded/.gitkeep
 
 # Ignore configuration files that may contain sensitive information.
-web/sites/*/settings*.php
-web/sites/*/services.yml
+settings/settings.local.php
+settings/services.local.yml
+web/sites/*/settings.local.php
+web/sites/*/services.local.yml
 
 # Ignore Drupal's file directory.
 web/sites/*/files

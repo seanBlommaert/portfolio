@@ -12,4 +12,4 @@ main:
   js:
       static/js/main.js: {}
   dependencies:
-    - jquery.inview
+    - seanb/jquery.inview

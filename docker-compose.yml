@@ -25,7 +25,7 @@ services:
       - dockerdns
     networks:
       - default
-      - commonapps_default
+      - common-apps_default
     dns:
      - ${DOCKERDNS}
 
@@ -44,8 +44,8 @@ services:
       - php
     networks:
       - default
-      - commonapps_default
+      - common-apps_default
 
 networks:
-  commonapps_default:
+  common-apps_default:
     external: true

@@ -1,0 +1,6 @@
+jpeg_quality: 75
+resize_filter: 22
+optimize: true
+strip_metadata: true
+_core:
+  default_config_hash: OWs0xvmhGEMKw-V_JbWQdgWtjkq-CWQD5zKsy2Guzao

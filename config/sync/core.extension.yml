@@ -2,6 +2,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
+  big_pipe: 0
   block: 0
   breakpoint: 0
   ckeditor: 0
@@ -20,6 +21,7 @@ module:
   google_tag: 0
   honeypot: 0
   image: 0
+  imagick: 0
   inline_entity_form: 0
   layout_discovery: 0
   link: 0
@@ -33,8 +35,6 @@ module:
   paragraphs: 0
   path: 0
   pathauto: 0
-  responsive_image: 0
-  scheduled_updates: 0
   system: 0
   taxonomy: 0
   text: 0
