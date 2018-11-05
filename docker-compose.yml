@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 # Access site at http://${NAME}.dev
 # Point search_api_solr to http://${NAME}-solr:8983/solr/#/drupal
@@ -6,46 +6,69 @@ version: "2"
 services:
 
   php:
-    image: wodby/drupal-php:${PHP_WODBY_TAG}
+    image: wodby/drupal-php:${PHP_TAG}
+    container_name: ${NAME}-php
     environment:
       PHP_DOCROOT: ${DOCROOT} # Relative path inside the /var/www/html/ directory.
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog.develop:1025
       PHP_FPM_MAX_CHILDREN: 16
-      PHP_XDEBUG: 1
-      PHP_XDEBUG_DEFAULT_ENABLE: 1              # Renamed from PHP_XDEBUG_ENABLED in latest version.
-      PHP_XDEBUG_REMOTE_AUTOSTART: 1            # Renamed from PHP_XDEBUG_AUTOSTART in latest version.
-      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting bellow
-      PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # You will also need to 'sudo ifconfig lo0 alias 10.254.254.254'
+      PHP_MAX_EXECUTION_TIME: 3600
+      PHP_MEMORY_LIMIT: 512M
+      PHP_XDEBUG: 0
+      PHP_XDEBUG_DEFAULT_ENABLE: 0
+      PHP_XDEBUG_REMOTE_AUTOSTART: 0
+      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting
+      PHP_XDEBUG_REMOTE_HOST: host.docker.internal
       PHP_XDEBUG_MAX_NESTING_LEVEL: 2048
+      PHP_OPCACHE_MAX_ACCELERATED_FILES: 20000
+      PHP_OPCACHE_MEMORY_CONSUMPTION: 256
       PHP_IDE_CONFIG: serverName=${NAME}.develop
+      SIMPLESAMLPHP_CONFIG_DIR: /var/www/html/settings/saml/config
     volumes:
       - ./:/var/www/html:delegated
+      - docker-sync:/var/www/html:nocopy
     external_links:
       - mysql
-      - dockerdns
     networks:
       - default
       - common-apps_default
-    dns:
-     - ${DOCKERDNS}
 
   nginx:
-    container_name: ${NAME} # without .develop if using .develop dns
-    image: wodby/drupal-nginx:8-1.13
+    image: wodby/drupal-nginx:8-1.15
+    container_name: ${NAME}-nginx
     environment:
-      VIRTUAL_HOST: ${NAME}.develop # This tell global proxy about this container.
-      NGINX_BACKEND_HOST: php
+      VIRTUAL_HOST: ${NAME}.develop, herta.develop, kitkat.develop, nema.develop, nescafe.develop, nesquik.develop, optifast.develop, smarties.develop, thomy.develop, wagner.develop
+      NGINX_BACKEND_HOST: ${NAME}-php
+      NGINX_BACKEND_PORT: 9000
       NGINX_SERVER_NAME: ${NAME}.develop
       NGINX_SERVER_ROOT: /var/www/html/${DOCROOT}
-      DRUPAL_VERSION: ${DRUPAL_VERSION}  # Allowed: 7, 8.
+      NGINX_CLIENT_BODY_TIMEOUT: 3600
+      NGINX_CLIENT_HEADER_TIMEOUT: 3600
+      NGINX_KEEPALIVE_TIMEOUT: 3600
+      NGINX_SEND_TIMEOUT: 3600
+      NGINX_ERROR_LOG_LEVEL: debug
     volumes:
       - ./:/var/www/html:delegated
+      - docker-sync:/var/www/html:nocopy
+    labels:
+      - 'traefik.backend=${NAME}-nginx'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:${NAME}.develop, herta.develop, kitkat.develop, nema.develop, nescafe.develop, nesquik.develop, optifast.develop, smarties.develop, thomy.develop, wagner.develop'
     depends_on:
       - php
     networks:
-      - default
-      - common-apps_default
+      default:
+        aliases:
+          - ${NAME}.develop
+      common-apps_default:
+        aliases:
+          - ${NAME}.develop
 
 networks:
   common-apps_default:
     external: true
+
+volumes:
+  docker-sync:
+    external:
+      name: "${NAME}-sync"
