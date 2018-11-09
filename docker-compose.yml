@@ -64,6 +64,11 @@ services:
         aliases:
           - ${NAME}.develop
 
+  memcached:
+    image: wodby/memcached:1.5-2.1.1
+    container_name: ${NAME}-memcached
+    command: ['-m', '256m']
+
 networks:
   common-apps_default:
     external: true
