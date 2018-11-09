@@ -6,12 +6,33 @@
  */
 
 /**
+ * Trusted host configuration.
+ */
+$settings['trusted_host_patterns'] = [
+  '^seanblommaert\.nl',
+  '^www\.seanblommaert\.nl',
+];
+
+/**
  * Configuration overrides.
  *
  * $config['system.site']['name'] = 'My Drupal site';
  */
 $config['config_split.config_split.development']['status'] = FALSE;
 $config['config_split.config_split.excluded']['status'] = TRUE;
+
+/**
+ * Hide error logs.
+ */
+$config['system.logging']['error_level'] = 'hide';
+
+/**
+ * Set performance defaults.
+ */
+$config['system.performance']['css']['preprocess'] = TRUE;
+$config['system.performance']['js']['preprocess'] = TRUE;
+$config['system.performance']['minifyhtml']['minify_html'] = TRUE;
+$config['system.performance']['cache']['page']['max_age'] = 86400;
 
 /**
  * Location of the site configuration files.
