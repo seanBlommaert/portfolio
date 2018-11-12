@@ -8,6 +8,9 @@ libraries:
   - seanb/jquery.inview
   - seanb/main
 
+libraries-override:
+  fortytwo/base: false
+
 stylesheets-remove:
   - '@fortytwo/static/css/fortytwo.css'
 

@@ -37,18 +37,20 @@ header {
     text-align: center;
     z-index: 2;
 
-    h1, h2 {
+    h1,
+    span.title-prefix {
       color: $page-title-color;
       text-shadow: 0 0 20px $page-title-shadow-color;
     }
 
-    h1 {
-      font-size: $header-title-font-size;
+    span.title-prefix {
+      font-size: $header-title-prefix-font-size;
       font-weight: 100;
+      text-transform: uppercase;
     }
 
-    h2 {
-      font-size: $header-subtitle-font-size;
+    h1 {
+      font-size: $header-title-font-size;
       margin-bottom: 20px;
     }
 

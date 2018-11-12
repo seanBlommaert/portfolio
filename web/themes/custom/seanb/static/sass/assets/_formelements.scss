@@ -23,8 +23,8 @@ button,
 input[type='submit'],
 input[type='button'],
 a.button {
-  @include button;
   @extend %transition;
+  @include button;
   margin-right: 10px;
 }
 
@@ -74,38 +74,34 @@ fieldset {
     padding: 0 5px;
     white-space: nowrap;
   }
+}
 
-  html.js & {
-    &.collapsible {
-      .fieldset-legend {
-        background-image: none;
-        padding-left: 0;
+html.js fieldset.collapsible {
+  .fieldset-legend {
+    background-image: none;
+    padding-left: 0;
+  }
 
-        &:before {
-          @include arrow('down');
-          display: inline-block;
-          font-size: pxtorem(12px);
-          height: 14px;
-          width: 14px;
-        }
-      }
+  .fieldset-legend:before {
+    @include arrow('down');
+    display: inline-block;
+    font-size: pxtorem(12px);
+    height: 14px;
+    width: 14px;
+  }
 
-      &.collapsed {
-        border-left: 1px solid transparent;
+  &.collapsed {
+    border-left: 1px solid transparent;
 
-        .fieldset-legend {
-          &:before {
-            transform: rotate(-90deg);
+    .fieldset-legend:before {
+      transform: rotate(-90deg);
 
-            vertical-align: 3px;
-          }
-        }
-      }
-
-      a.fieldset-title {
-        padding-left: pxtorem(3px);
-      }
+      vertical-align: 3px;
     }
+  }
+
+  a.fieldset-title {
+    padding-left: pxtorem(3px);
   }
 }
 

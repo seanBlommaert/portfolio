@@ -5,72 +5,69 @@ footer {
 
   nav {
     display: block;
+  }
 
-    ul {
-      @extend %social-hovers;
-      @include inline-list;
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      max-width: 700px;
+  nav ul {
+    @extend %social-hovers;
+    @include inline-list;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 700px;
 
-      li {
-        margin: 0 5px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      a {
-        align-items: center;
-        color: $footer-link-color;
-        display: inline-flex;
-        font-size: $footer-font-size;
-        justify-content: space-between;
-        line-height: $footer-line-height;
-        padding: 10px 20px;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        &:before {
-          color: $footer-link-color;
-          font-size: $footer-icon-font-size;
-          height: 25px;
-          line-height: $footer-icon-line-height;
-          width: 25px;
-        }
-
-        &:hover {
-          color: $footer-link-hover-color;
-        }
-
-        &.github:hover:before {
-          color: $footer-link-hover-color;
-        }
-      }
-
+    li {
+      margin: 0 5px;
     }
+
+    li:first-child {
+      margin-left: 0;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      align-items: center;
+      color: $footer-link-color;
+      display: inline-flex;
+      font-size: $footer-font-size;
+      justify-content: space-between;
+      line-height: $footer-line-height;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a:before {
+      color: $footer-link-color;
+      font-size: $footer-icon-font-size;
+      height: 25px;
+      line-height: $footer-icon-line-height;
+      width: 25px;
+    }
+
+    a:hover {
+      color: $footer-link-hover-color;
+    }
+
+    a.github:hover:before {
+      color: $footer-link-hover-color;
+    }
+
   }
 }
 
 @media #{$mobile-p} {
   footer {
     padding: 60px 0;
-    nav {
-      ul {
-        li {
-          margin: 0;
 
-          a {
-            font-size: $footer-font-size-mobile;
-            padding: 0;
-          }
-        }
+    nav ul li {
+      margin: 0;
+
+      a {
+        font-size: $footer-font-size-mobile;
+        padding: 0;
       }
     }
   }
@@ -79,15 +76,12 @@ footer {
 @media #{$mobile-l} {
   footer {
     padding: 80px 0;
-    nav {
-      ul {
-        li {
-          margin: 0;
 
-          a {
-            padding: 5px 10px;
-          }
-        }
+    nav ul li {
+      margin: 0;
+
+      a {
+        padding: 5px 10px;
       }
     }
   }
