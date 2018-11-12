@@ -47,6 +47,7 @@ module:
   views: 0
   webform: 0
   webform_ui: 0
+  xmlsitemap: 1
   minimal: 1000
 theme:
   stable: 0

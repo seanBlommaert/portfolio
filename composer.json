@@ -45,6 +45,7 @@
         "drupal/token": "1.5.0",
         "drupal/twig_tweak": "2.1.0",
         "drupal/webform": "5.0.0-rc24",
+        "drupal/xmlsitemap": "1.0.0-alpha3",
         "drupal/fortytwo": "2.5.0"
     },
     "require-dev": {
