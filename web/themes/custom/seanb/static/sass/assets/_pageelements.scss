@@ -3,6 +3,13 @@ div.page-wrapper {
   opacity: 0;
 }
 
+.wrapper {
+  background-color: $page-background-color;
+  min-height: 300px;
+  overflow: hidden;
+  z-index: 2;
+}
+
 // Messages
 div.alert {
   background-image: none;
@@ -54,14 +61,17 @@ div.alert {
 
 p.intro {
   font-size: $introduction-font-size;
-  margin-top: 0;
+  margin: 0 auto 1em;
+  max-width: 720px;
 }
 
-.wrapper {
-  background-color: $page-background-color;
-  min-height: 300px;
-  overflow: hidden;
-  z-index: 2;
+p {
+  margin: 0 auto 1em;
+  max-width: 860px;
+}
+
+a {
+  color: $page-link-color;
 }
 
 .ajax-progress-throbber {

@@ -7,7 +7,7 @@ footer {
     display: block;
   }
 
-  nav ul {
+  nav ul.menu {
     @extend %social-hovers;
     @include inline-list;
     display: flex;
@@ -53,6 +53,10 @@ footer {
 
     a.github:hover:before {
       color: $footer-link-hover-color;
+    }
+
+    a.linkedin:before {
+      line-height: $footer-icon-linkedin-line-height;
     }
 
   }

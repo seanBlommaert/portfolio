@@ -18,6 +18,9 @@ settings:
       value: grey
       label: Grey
     -
+      value: grey-dark
+      label: Grey (dark)
+    -
       value: black
       label: Black
   allowed_values_function: ''

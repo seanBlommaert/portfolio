@@ -5,6 +5,7 @@ $light-grey: #EFECEC;
 $grey: #dedede;
 $medium-grey: #C1B9B2;
 $dark-grey: #7B7672;
+$darkest-grey: #353131;
 $light-black: #12130F;
 $black: #11120E;
 $blue: #3D8DD3;
@@ -50,7 +51,7 @@ $header-link-background-hover-color: $white;
 
 // CASES
 $cases-bg-color: $off-white;
-$cases-year-font-color: $medium-grey;
+$cases-year-font-color: $dark-grey;
 $cases-role-font-color: $grey;
 $cases-tag-border-color: $grey;
 

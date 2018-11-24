@@ -37,7 +37,7 @@ services:
     image: wodby/drupal-nginx:8-1.15
     container_name: ${NAME}-nginx
     environment:
-      VIRTUAL_HOST: ${NAME}.develop, herta.develop, kitkat.develop, nema.develop, nescafe.develop, nesquik.develop, optifast.develop, smarties.develop, thomy.develop, wagner.develop
+      VIRTUAL_HOST: ${NAME}.develop
       NGINX_BACKEND_HOST: ${NAME}-php
       NGINX_BACKEND_PORT: 9000
       NGINX_SERVER_NAME: ${NAME}.develop
@@ -53,7 +53,7 @@ services:
     labels:
       - 'traefik.backend=${NAME}-nginx'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:${NAME}.develop, herta.develop, kitkat.develop, nema.develop, nescafe.develop, nesquik.develop, optifast.develop, smarties.develop, thomy.develop, wagner.develop'
+      - 'traefik.frontend.rule=Host:${NAME}.develop'
     depends_on:
       - php
     networks:

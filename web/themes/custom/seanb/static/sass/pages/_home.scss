@@ -18,6 +18,15 @@
       background-color: $light-grey;
     }
 
+    section.grey-dark {
+      background-color: $darkest-grey;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+
     section.black {
       background-color: $black;
       color: $white;
