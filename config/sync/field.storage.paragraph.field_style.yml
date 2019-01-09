@@ -19,7 +19,7 @@ settings:
       label: Grey
     -
       value: grey-dark
-      label: Grey (dark)
+      label: 'Grey (dark)'
     -
       value: black
       label: Black
