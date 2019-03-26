@@ -14,13 +14,13 @@
       justify-content: center;
       overflow: hidden;
       width: 480px;
+    }
 
-      img {
-        @extend %transition;
-        flex-shrink: 0;
-        height: 100%;
-        width: auto;
-      }
+    .image img {
+      @extend %transition;
+      flex-shrink: 0;
+      height: 100%;
+      width: auto;
     }
 
     &:hover .image img {
@@ -85,11 +85,11 @@
         float: none;
         height: 240px;
         width: 100%;
+      }
 
-        img {
-          width: 100%;
-          height: auto;
-        }
+      .image img {
+        height: auto;
+        width: 100%;
       }
 
       &:hover .image img {
@@ -127,10 +127,10 @@
       .image {
         justify-content: flex-start;
         width: 360px;
+      }
 
-        img {
-          width: auto;
-        }
+      .image img {
+        width: auto;
       }
 
       .details {
@@ -151,10 +151,10 @@
       .image {
         justify-content: flex-start;
         width: 360px;
+      }
 
-        img {
-          width: auto;
-        }
+      .image img {
+        width: auto;
       }
     }
   }
