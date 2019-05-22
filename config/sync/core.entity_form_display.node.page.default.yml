@@ -35,6 +35,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Header
+      region: hidden
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -51,7 +52,7 @@ content:
     settings:
       title: Block
       title_plural: Blocks
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
