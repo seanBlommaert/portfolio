@@ -13,8 +13,8 @@ dependencies:
     - image.style.cases
     - paragraphs.paragraphs_type.case
   module:
+    - blazy
     - field_group
-    - image
     - link
     - text
 third_party_settings:
@@ -39,6 +39,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Details
+      region: content
 id: paragraph.case.default
 targetEntityType: paragraph
 bundle: case
@@ -56,9 +57,49 @@ content:
     label: hidden
     settings:
       image_style: cases
-      image_link: ''
+      media_switch: ''
+      thumbnail_style: ''
+      ratio: ''
+      sizes: ''
+      breakpoints:
+        xs:
+          image_style: ''
+          width: ''
+        sm:
+          image_style: ''
+          width: ''
+        md:
+          image_style: ''
+          width: ''
+        lg:
+          image_style: ''
+          width: ''
+        xl:
+          image_style: ''
+          width: ''
+      current_view_mode: default
+      background: false
+      caption:
+        title: '0'
+        alt: '0'
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      optionset: default
+      skin: ''
+      style: ''
+      box_caption: ''
+      box_caption_custom: ''
+      box_style: ''
+      box_media_style: ''
+      responsive_image_style: ''
+      grid: 0
+      grid_header: ''
+      grid_medium: 0
+      grid_small: 0
     third_party_settings: {  }
-    type: image
+    type: blazy
     region: content
   field_links:
     weight: 5

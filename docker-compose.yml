@@ -14,9 +14,9 @@ services:
       PHP_FPM_MAX_CHILDREN: 16
       PHP_MAX_EXECUTION_TIME: 3600
       PHP_MEMORY_LIMIT: 512M
-      PHP_XDEBUG: 0
-      PHP_XDEBUG_DEFAULT_ENABLE: 0
-      PHP_XDEBUG_REMOTE_AUTOSTART: 0
+#      PHP_XDEBUG: 0
+      PHP_XDEBUG_DEFAULT_ENABLE: 1
+      PHP_XDEBUG_REMOTE_AUTOSTART: 1
       PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting
       PHP_XDEBUG_REMOTE_HOST: host.docker.internal
       PHP_XDEBUG_MAX_NESTING_LEVEL: 2048
@@ -51,6 +51,24 @@ services:
       - default
       - common-apps_default
 
+  mariadb:
+    image: wodby/mariadb:10.1
+    container_name: ${NAME}-db
+    stop_grace_period: 30s
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql-sync:/var/lib/mysql:delegated
+    ports:
+      - "3313:3306"
+    labels:
+      - 'traefik.backend=${NAME}-db'
+      - 'traefik.port=3313'
+      - 'traefik.frontend.rule=Host:${NAME}-db.develop'
+    networks:
+      - default
+      - common-apps_default
+
   memcached:
     image: wodby/memcached:1.5-2.1.1
     container_name: ${NAME}-memcached
@@ -64,3 +82,6 @@ volumes:
   docker-sync:
     external:
       name: "${NAME}-sync"
+  mysql-sync:
+    external:
+      name: "${NAME}-db-sync"

@@ -36,6 +36,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Title wrapper'
+      region: content
 id: node.page.header
 targetEntityType: node
 bundle: page

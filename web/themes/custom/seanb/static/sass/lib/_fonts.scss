@@ -41,40 +41,24 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/lato-regular-webfont.woff2') format('woff2'),
-  url('../fonts/lato-regular-webfont.woff') format('woff');
+  src: url('../fonts/lato-lightitalic-webfont.woff2') format('woff2'),
+  url('../fonts/lato-lightitalic-webfont.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/lato-italic-webfont.woff2') format('woff2'),
-  url('../fonts/lato-italic-webfont.woff') format('woff');
+  src: url('../fonts/lato-lightitalic-webfont.woff2') format('woff2'),
+  url('../fonts/lato-lightitalic-webfont.woff') format('woff');
   font-weight: 700;
   font-style: italic;
 }
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato-bold-webfont.woff2') format('woff2'),
-  url('../fonts/lato-bold-webfont.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/lato-bolditalic-webfont.woff2') format('woff2'),
-  url('../fonts/lato-bolditalic-webfont.woff') format('woff');
-  font-weight: 900;
-  font-style: italic;
-}
-
 
 // Icomoon
 @font-face {
   font-family: 'icomoon';
   src: url('../fonts/icomoon.eot');
   src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('application/font-woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
