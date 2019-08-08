@@ -4,7 +4,6 @@ module:
   allowed_formats: 0
   big_pipe: 0
   blazy: 0
-  blazy_ui: 0
   block: 0
   breakpoint: 0
   ckeditor: 0
@@ -20,13 +19,13 @@ module:
   field_group: 0
   file: 0
   filter: 0
-  google_tag: 0
   honeypot: 0
   image: 0
   imagick: 0
   inline_entity_form: 0
   layout_discovery: 0
   link: 0
+  matomo: 0
   media: 0
   memcache: 0
   menu_link_attributes: 0

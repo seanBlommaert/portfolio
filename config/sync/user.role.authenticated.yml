@@ -10,4 +10,5 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'opt-in or out of matomo tracking'
   - 'view media'

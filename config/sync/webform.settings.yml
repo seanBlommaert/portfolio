@@ -103,7 +103,6 @@ export:
   file_name: 'submission-[webform_submission:serial]'
 batch:
   default_batch_export_size: 500
-  default_batch_import_size: 100
   default_batch_update_size: 500
   default_batch_delete_size: 500
   default_batch_email_size: 500
@@ -165,13 +164,13 @@ test:
   names: "first_name:\r\n  - John\r\n  - Paul\r\n  - Ringo\r\n  - George\r\nlast_name:\r\n  - Lennon\r\n  - McCartney\r\n  - Starr\r\n  - Harrison\r\naddress:\r\n  - '10 Main Street'\r\n  - '11 Brook Alley Road. APT 1'\r\nzip:\r\n  - '11111'\r\n  - '12345'\r\n  - 12345-6789\r\nphone:\r\n  - 123-456-7890\r\n  - 098-765-4321\r\ncity:\r\n  - Springfield\r\n  - Pleasantville\r\n  - 'Hill Valley'\r\nurl:\r\n  - 'http://example.com'\r\n  - 'http://test.com'\r\ndefault:\r\n  - Loremipsum\r\n  - Oratione\r\n  - Dixisset\r\npostal_code:\r\n  - '11111'\r\n  - '12345'\r\n  - 12345-6789"
 ui:
   video_display: dialog
+  description_help: true
   details_save: true
   help_disabled: false
   dialog_disabled: false
   offcanvas_disabled: false
-  contribute_disabled: false
   promotions_disabled: false
-  description_help: true
+  contribute_disabled: false
 libraries:
   excluded_libraries:
     - jquery.chosen
@@ -185,9 +184,7 @@ contribute:
   account_type: user
   account_id: null
 langcode: en
-third_party_settings:
-  captcha:
-    replace_administration_mode: true
+third_party_settings: {  }
 library:
   cdn: false
 _core:
