@@ -15,6 +15,7 @@
   url('../fonts/lato-hairline-webfont.woff') format('woff');
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Lato';
@@ -22,6 +23,7 @@
   url('../fonts/lato-hairlineitalic-webfont.woff') format('woff');
   font-weight: 100;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -30,6 +32,7 @@
   url('../fonts/lato-light-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Lato';
@@ -37,6 +40,7 @@
   url('../fonts/lato-lightitalic-webfont.woff') format('woff');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -45,6 +49,7 @@
   url('../fonts/lato-lightitalic-webfont.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Lato';
@@ -52,6 +57,7 @@
   url('../fonts/lato-lightitalic-webfont.woff') format('woff');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 // Icomoon
@@ -61,4 +67,5 @@
   src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('application/font-woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
