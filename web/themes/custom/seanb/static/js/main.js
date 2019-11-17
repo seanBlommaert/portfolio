@@ -18,6 +18,13 @@
         }
       });
 
+      // Use mobile header image.
+      $('section, .skill, footer nav', context).css('opacity', '0').bind('inview', function (event, visible) {
+        if (visible === true) {
+          $(this).addClass('view-fade-in');
+        }
+      });
+
     },
   };
 

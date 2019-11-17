@@ -5,6 +5,10 @@
     margin: 0 0 20px;
     overflow: hidden;
 
+    p {
+      margin: .5em auto 1em;
+    }
+
     .image {
       align-items: center;
       clear: both;
@@ -20,11 +24,6 @@
       @extend %transition;
       flex-shrink: 0;
       height: 100%;
-      width: auto;
-    }
-
-    &:hover .image img {
-      height: 105%;
       width: auto;
     }
 
@@ -62,10 +61,11 @@
 
       .tag {
         border: 1px solid $cases-tag-border-color;
+        border-radius: 20px;
         color: $cases-tag-color;
         display: inline-block;
         margin: 0 10px 10px 0;
-        padding: 10px 20px;
+        padding: 7px 15px;
       }
 
     }

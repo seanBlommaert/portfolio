@@ -19,7 +19,8 @@ header {
     z-index: 1;
   }
 
-  .hero-image {
+  .hero-image,
+  .hero-image-mobile {
     background: transparent none no-repeat center center fixed;
     background-size: cover;
     display: block;
@@ -28,6 +29,10 @@ header {
     transition: 0s linear;
     transition-property: background-position;
     width: 100vw;
+  }
+
+  .hero-image-mobile {
+    display: none;
   }
 
   .title-wrapper {
@@ -94,9 +99,21 @@ header {
 
 @media #{$mobile} {
   header {
+    .hero-image-mobile {
+      display: block;
+    }
+
+    .hero-image {
+      display: none;
+    }
+
     .title-wrapper {
       h1 {
         font-size: $header-title-font-size-mobile;
+      }
+
+      span.title-prefix {
+        font-size: $header-title-prefix-font-size-mobile;
       }
 
       h2 {

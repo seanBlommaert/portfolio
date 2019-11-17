@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_content
     - field.field.node.page.field_image
+    - field.field.node.page.field_image_mobile
     - field.field.node.page.field_links
     - field.field.node.page.field_meta
     - field.field.node.page.field_subtitle
@@ -23,6 +24,7 @@ third_party_settings:
     group_header:
       children:
         - field_image
+        - field_image_mobile
         - field_title
         - field_subtitle
         - field_links
@@ -67,8 +69,16 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_image_mobile:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_links:
-    weight: 10
+    weight: 11
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -82,7 +92,7 @@ content:
     type: metatag_firehose
     region: content
   field_subtitle:
-    weight: 9
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -90,7 +100,7 @@ content:
     type: string_textfield
     region: content
   field_title:
-    weight: 8
+    weight: 9
     settings:
       size: 60
       placeholder: ''
