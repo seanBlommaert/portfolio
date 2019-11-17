@@ -45,7 +45,20 @@ div.navigation {
     margin-right: 10px;
 
     a {
-      @extend %button;
+      border-bottom: 3px solid transparent;
+      color: $button-font-color;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px 20px;
+      position: relative;
+      text-decoration: none;
+      z-index: 1;
+
+      &:hover,
+      &:active {
+        border-bottom: 3px solid $button-font-color;
+      }
     }
   }
 

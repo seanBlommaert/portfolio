@@ -22,8 +22,7 @@ services:
       PHP_XDEBUG_MAX_NESTING_LEVEL: 2048
       PHP_IDE_CONFIG: serverName=${NAME}.develop
     volumes:
-#      - ./:/var/www/html:delegated
-      - docker-sync:/var/www/html:nocopy
+      - ./:/var/www/html:delegated
     external_links:
       - mysql
     networks:
@@ -39,8 +38,7 @@ services:
       NGINX_SERVER_ROOT: /var/www/html/${DOCROOT}
       NGINX_VHOST_PRESET: drupal8
     volumes:
-#      - ./:/var/www/html:delegated
-      - docker-sync:/var/www/html:nocopy
+      - ./:/var/www/html:delegated
     labels:
       - 'traefik.backend=${NAME}-nginx'
       - 'traefik.port=80'
@@ -58,7 +56,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - mysql-sync:/var/lib/mysql:delegated
+      - ./.mysql-data:/var/lib/mysql:delegated
     ports:
       - "3313:3306"
     labels:
@@ -77,11 +75,3 @@ services:
 networks:
   common-apps_default:
     external: true
-
-volumes:
-  docker-sync:
-    external:
-      name: "${NAME}-sync"
-  mysql-sync:
-    external:
-      name: "${NAME}-db-sync"
