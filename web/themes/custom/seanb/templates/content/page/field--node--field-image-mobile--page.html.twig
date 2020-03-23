@@ -36,5 +36,5 @@
  * @see template_preprocess_field()
  */
 #}
-<div class="hero-image-mobile" style="background-image: url({{ url('<front>') }}{{ items|first.content['#item'].entity.uri.value|image_style('hero')|trim('/') }});">
+<div class="hero-image-mobile" style="background-image: url({{ file_url(items|first.content['#item'].entity.uri.value) }});">
 </div>
