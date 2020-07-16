@@ -1,6 +1,5 @@
 admin_css: true
 responsive_image: false
-unbreakpoints: false
 one_pixel: true
 placeholder: ''
 extras: {  }

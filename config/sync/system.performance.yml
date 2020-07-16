@@ -15,5 +15,3 @@ js:
 stale_file_threshold: 2592000
 _core:
   default_config_hash: b2cssrj-lOmATIbdehfCqfCFgVR0qCdxxWhwqa2KBVQ
-minifyhtml:
-  minify_html: 1

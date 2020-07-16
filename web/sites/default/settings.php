@@ -37,9 +37,7 @@ $config['system.performance']['cache']['page']['max_age'] = 86400;
 /**
  * Location of the site configuration files.
  */
-$config_directories = array(
-  'sync' => './../config/sync',
-);
+$settings['config_sync_directory'] = './../config/sync';
 
 /**
  * Public file path.
@@ -50,6 +48,11 @@ $settings['file_public_path'] = 'sites/default/files';
  * Private file path.
  */
 $settings['file_private_path'] = 'sites/default/files/private';
+
+/**
+ * Temp file path.
+ */
+$settings['file_temp_path'] = $_ENV['TEMP'];
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.

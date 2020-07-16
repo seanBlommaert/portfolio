@@ -1,1 +1,2 @@
-strip_comments: 1
+strip_comments: true
+minify: true

@@ -23,9 +23,12 @@ module:
   image: 0
   imagick: 0
   inline_entity_form: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_tabs: 0
+  jquery_ui_tooltip: 0
   layout_discovery: 0
   link: 0
-  matomo: 0
   media: 0
   memcache: 0
   menu_link_attributes: 0
@@ -38,6 +41,7 @@ module:
   page_cache: 0
   paragraphs: 0
   path: 0
+  path_alias: 0
   pathauto: 0
   system: 0
   taxonomy: 0

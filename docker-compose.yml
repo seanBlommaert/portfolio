@@ -6,10 +6,10 @@ version: "3"
 services:
 
   php:
-    image: wodby/drupal-php:${PHP_TAG}
-    container_name: ${NAME}-php
+    image: wodby/drupal-php:7.2-dev-macos
+    container_name: seanb_php
     environment:
-      PHP_DOCROOT: ${DOCROOT} # Relative path inside the /var/www/html/ directory.
+      PHP_DOCROOT: web
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog.develop:1025
       PHP_FPM_MAX_CHILDREN: 16
       PHP_MAX_EXECUTION_TIME: 3600
@@ -20,29 +20,27 @@ services:
       PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting
       PHP_XDEBUG_REMOTE_HOST: host.docker.internal
       PHP_XDEBUG_MAX_NESTING_LEVEL: 2048
-      PHP_IDE_CONFIG: serverName=${NAME}.develop
+      PHP_IDE_CONFIG: serverName=seanb.develop
     volumes:
       - ./:/var/www/html:delegated
     external_links:
-      - mysql
+      - mariadb
     networks:
       - default
       - common-apps_default
 
   nginx:
-    image: wodby/nginx:1.15-5.3.3
-    container_name: ${NAME}-nginx
+    image: wodby/drupal-nginx:8-1.15
+    container_name: seanb_nginx
     environment:
-      VIRTUAL_HOST: ${NAME}.develop
-      NGINX_BACKEND_HOST: ${NAME}-php
-      NGINX_SERVER_ROOT: /var/www/html/${DOCROOT}
-      NGINX_VHOST_PRESET: drupal8
+      VIRTUAL_HOST: seanb.develop
+      NGINX_BACKEND_HOST: seanb_php
+      NGINX_SERVER_NAME: seanb.develop
+      NGINX_SERVER_ROOT: /var/www/html/web
     volumes:
       - ./:/var/www/html:delegated
     labels:
-      - 'traefik.backend=${NAME}-nginx'
-      - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:${NAME}.develop'
+      - 'traefik.http.routers.seanb_nginx.rule=Host(`seanb.develop`)'
     depends_on:
       - php
     networks:
@@ -51,7 +49,7 @@ services:
 
   mariadb:
     image: wodby/mariadb:10.1
-    container_name: ${NAME}-db
+    container_name: seanb_db
     stop_grace_period: 30s
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -60,16 +58,14 @@ services:
     ports:
       - "3313:3306"
     labels:
-      - 'traefik.backend=${NAME}-db'
-      - 'traefik.port=3313'
-      - 'traefik.frontend.rule=Host:${NAME}-db.develop'
+      - 'traefik.http.routers.eur_nginx.rule=Host(`seanb-db.develop`)'
     networks:
       - default
       - common-apps_default
 
   memcached:
     image: wodby/memcached:1.5-2.1.1
-    container_name: ${NAME}-memcached
+    container_name: seanb_memcached
     command: ['-m', '512m']
 
 networks:
