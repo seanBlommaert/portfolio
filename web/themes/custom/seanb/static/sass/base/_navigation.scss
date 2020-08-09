@@ -3,7 +3,7 @@ div.navigation {
   background-color: $navigation-bg-color;
   border-bottom: 1px solid $navigation-border-color;
   opacity: 0;
-  padding: 20px 0 17px 0;
+  padding: 20px 0 17px;
   position: fixed;
   text-align: right;
   top: 0;
@@ -12,32 +12,32 @@ div.navigation {
 
   nav {
     display: inline-block;
+  }
 
-    ul {
-      @include inline-list;
+  nav ul {
+    @include inline-list;
 
-      li {
-        margin: 0 5px;
+    li {
+      margin: 0 5px;
 
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
+      &:first-child {
+        margin-left: 0;
       }
 
-      a {
-        color: $navigation-link-color;
-        font-size: $navigation-font-size;
-        line-height: $navigation-line-height;
-        padding: 5px 10px;
-        text-decoration: none;
-        text-transform: uppercase;
+      &:last-child {
+        margin-right: 0;
       }
-
     }
+
+    a {
+      color: $navigation-link-color;
+      font-size: $navigation-font-size;
+      line-height: $navigation-line-height;
+      padding: 5px 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
   }
 
   .mainnavigation {

@@ -3,6 +3,7 @@ type: theme
 description: Forty Two Sub theme made from the starterkit
 base theme: fortytwo
 core: 8.x
+core_version_requirement: ^8 || ^9
 
 libraries:
   - seanb/jquery.inview

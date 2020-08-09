@@ -1,3 +1,26 @@
+.navigation .navigation-inner,
+section .section-inner,
+footer nav {
+  margin: 0 auto;
+  max-width: calc-grid() + px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+body:not(.front),
+body:not(.node--type-page) {
+  main.content {
+    margin: 0 auto;
+    max-width: calc-grid() + px;
+    padding: 0 10px;
+    width: 100%;
+  }
+}
+
+#toolbar-administration nav {
+  width: 100%;
+}
+
 li.node-readmore a:after {
   @include icomoon('caret-right');
   font-size: 50%;
@@ -5,9 +28,7 @@ li.node-readmore a:after {
 }
 
 div.wrapper {
-  .content.column,
-  .sidebar.first,
-  .sidebar.second {
+  .content.column {
     margin-bottom: 0;
   }
 }

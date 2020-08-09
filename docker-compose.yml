@@ -6,7 +6,7 @@ version: "3"
 services:
 
   php:
-    image: wodby/drupal-php:7.2-dev-macos
+    image: wodby/drupal-php:7.3-dev-macos
     container_name: seanb_php
     environment:
       PHP_DOCROOT: web

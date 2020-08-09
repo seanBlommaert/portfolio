@@ -1,8 +1,8 @@
 css_adjust_sort_browsers: false
 css_adjust_sort_external: false
-css_defer: 1
+css_defer: 0
 css_defer_admin: false
-css_defer_external: true
+css_defer_external: false
 css_defer_js_code: 2
 css_preprocess: false
 css_translate: null

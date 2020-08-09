@@ -1,9 +1,9 @@
 // Grid settings
-$default-grid-columns: 16;
-$default-grid-column-width: 48;
-$default-grid-gutter-width: 30;
+$grid-columns: 16;
+$grid-column-width: 48;
+$grid-gutter-width: 30;
 
-$master-context-width: $default-grid-column-width * $default-grid-columns + $default-grid-gutter-width * ($default-grid-columns - 1);
+$master-context-width: $grid-column-width * $grid-columns + $grid-gutter-width * ($grid-columns - 1);
 
 //  The canvas width with the settings above is 1218px,
 //  if you alter the values, make sure the canvas width
@@ -41,6 +41,17 @@ $tablet-l-identifier-text: 'TABLET LANDSCAPE';
 $desktop-identifier-color: $pomegranate;
 $desktop-identifier-text: 'DESKTOP';
 
-// PAGE ELEMENTS SETTINGS
+// Media queries debug settings.
+$xs-identifier-color: $sunflower;
+$xs-identifier-text: 'XS';
+$sm-identifier-color: $nepgritis;
+$sm-identifier-text: 'SM';
+$md-identifier-color: $belizehole;
+$md-identifier-text: 'MD';
+$lg-identifier-color: $amethyst;
+$lg-identifier-text: 'LG';
+$xl-identifier-color: $pomegranate;
+$xl-identifier-text: 'XL - DESKTOP';
 
+// PAGE ELEMENTS SETTINGS
 $grid-transparency: 8;

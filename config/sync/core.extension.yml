@@ -61,8 +61,6 @@ module:
   xmlsitemap: 1
   minimal: 1000
 theme:
-  stable: 0
-  classy: 0
   seven: 0
   fortytwo: 0
   seanb: 0
