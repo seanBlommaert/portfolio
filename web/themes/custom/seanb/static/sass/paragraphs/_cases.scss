@@ -1,8 +1,8 @@
 .cases {
 
   .case {
-    display: flex;
     background-color: $cases-bg-color;
+    display: flex;
     margin: 0 0 20px;
     overflow: hidden;
 
@@ -80,6 +80,13 @@
 @media #{$mobile} {
   .cases {
     .case {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+
+      &:nth-child(even) {
+        flex-direction: column-reverse;
+      }
+
       .image {
         align-items: flex-start;
         float: none;
@@ -100,6 +107,7 @@
       &:nth-child(even) {
         .image {
           float: none;
+          width: 100%;
         }
       }
 
