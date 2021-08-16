@@ -62,14 +62,13 @@
   {% endif %}
   <div class="wrapper">
     {{ page.breadcrumb }}
-    <main class="content column">
+    <main id="main-content" class="content column">
       {% if messages %}
         <div class="messages">
           {{ messages }}
         </div>
       {% endif %}
       {{ page.help }}
-      <a id="main-content" tabindex="-1"></a>
       {{ page.content }}
     </main>
 
