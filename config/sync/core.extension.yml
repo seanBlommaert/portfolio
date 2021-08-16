@@ -27,10 +27,6 @@ module:
   image: 0
   imagick: 0
   inline_entity_form: 0
-  jquery_ui: 0
-  jquery_ui_datepicker: 0
-  jquery_ui_tabs: 0
-  jquery_ui_tooltip: 0
   layout_discovery: 0
   link: 0
   media: 0
