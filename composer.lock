@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "768a3dc02db74386ce7b8d4c9d61ef41",
+    "content-hash": "83e87d9eca38e22a36335403aba780c3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3022,17 +3022,17 @@
         },
         {
             "name": "drupal/fortytwo",
-            "version": "4.5.0",
+            "version": "4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fortytwo.git",
-                "reference": "8.x-4.5"
+                "reference": "8.x-4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fortytwo-8.x-4.5.zip",
-                "reference": "8.x-4.5",
-                "shasum": "6550781fd5f59c850b2b1013d28351a43dd23834"
+                "url": "https://ftp.drupal.org/files/projects/fortytwo-8.x-4.6.zip",
+                "reference": "8.x-4.6",
+                "shasum": "2f14c1a1ba9957133e29d85f0ea2c70a10d2e72b"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -3040,8 +3040,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-4.5",
-                    "datestamp": "1594810413",
+                    "version": "8.x-4.6",
+                    "datestamp": "1601451545",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

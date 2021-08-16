@@ -53,16 +53,18 @@
     <a href="#main-content" class="content-scroll">Scroll to content</a>
   </header>
   {% endif %}
+  {# Removed header since I probably don't need it.
   {% if page.navigation %}
-  <div class="navigation">
-    <div class="navigation-inner">
-      {{ page.navigation }}
+    <div class="navigation">
+      <div class="navigation-inner">
+        {{ page.navigation }}
+      </div>
     </div>
-  </div>
   {% endif %}
-  <div class="wrapper">
+  #}
+  <div id="main-content" class="wrapper">
     {{ page.breadcrumb }}
-    <main id="main-content" class="content column">
+    <main class="content column">
       {% if messages %}
         <div class="messages">
           {{ messages }}
@@ -71,18 +73,6 @@
       {{ page.help }}
       {{ page.content }}
     </main>
-
-    {% if page.sidebar_first %}
-      <aside class="column sidebar first">
-        {{ page.sidebar_first }}
-      </aside>  <!-- End first aside. -->
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="column sidebar second">
-        {{ page.sidebar_second }}
-      </aside> <!-- End second aside. -->
-    {% endif %}
   </div>
   {% if page.footer %}
   <footer>

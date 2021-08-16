@@ -8,7 +8,6 @@ module:
   advagg_mod: 0
   allowed_formats: 0
   big_pipe: 0
-  blazy: 0
   block: 0
   breakpoint: 0
   ckeditor: 0
@@ -54,6 +53,7 @@ module:
   token: 0
   toolbar: 0
   twig_tweak: 0
+  upgrade_status: 0
   user: 0
   views: 0
   webform: 0

@@ -1,6 +1,7 @@
 .cases {
 
   .case {
+    display: flex;
     background-color: $cases-bg-color;
     margin: 0 0 20px;
     overflow: hidden;
@@ -13,6 +14,7 @@
       align-items: center;
       clear: both;
       display: flex;
+      flex-shrink: 0;
       float: left;
       height: 480px;
       justify-content: center;
@@ -28,9 +30,7 @@
     }
 
     &:nth-child(even) {
-      .image {
-        float: right;
-      }
+      flex-direction: row-reverse;
     }
 
     .details {
