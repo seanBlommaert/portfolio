@@ -7,7 +7,7 @@ label[for*='disabled'] {
   border: 1px solid $button-border-color;
   font-family: $default-font;
   font-style: normal;
-  line-height: pxtorem($default-line-height / 1.5);
+  line-height: 1.5;
   vertical-align: baseline;
   width: auto;
 
@@ -58,7 +58,7 @@ input, textarea {
 }
 
 input[type='file'] {
-  padding: pxtorem(1px, 0, 1px, 1px);
+  padding: 1px 0 1px 1px;
 }
 
 input[disabled] {
@@ -85,7 +85,7 @@ html.js fieldset.collapsible {
   .fieldset-legend:before {
     @include arrow('down');
     display: inline-block;
-    font-size: pxtorem(12px);
+    font-size: .8rem;
     height: 14px;
     width: 14px;
   }
@@ -101,7 +101,7 @@ html.js fieldset.collapsible {
   }
 
   a.fieldset-title {
-    padding-left: pxtorem(3px);
+    padding-left: 3px;
   }
 }
 

@@ -1,35 +1,35 @@
-$default-line-height: pxtorem(24px);
+$default-line-height: 1.5;
 
-$heading1-font-size: pxtorem(48px);
-$heading2-font-size: pxtorem(32px);
-$heading3-font-size: pxtorem(24px);
-$heading4-font-size: pxtorem(18px);
+$heading1-font-size: 2.6rem;
+$heading2-font-size: 1.6rem;
+$heading3-font-size: 1.2rem;
+$heading4-font-size: 1rem;
 
-$header-title-prefix-font-size: pxtorem(42px);
-$header-title-prefix-font-size-mobile: pxtorem(36px);
-$header-title-font-size: pxtorem(62px);
-$header-title-font-size-mobile: pxtorem(28px);
-$header-subtitle-font-size-mobile: pxtorem(36px);
+$header-title-prefix-font-size: 2.6rem;
+$header-title-prefix-font-size-mobile: 1.8rem;
+$header-title-font-size: 3.6rem;
+$header-title-font-size-mobile: 1.4rem;
+$header-subtitle-font-size-mobile: 1.8rem;
 
-$introduction-font-size: pxtorem(28px);
+$introduction-font-size: 1.6rem;
 
-$navigation-font-size: pxtorem($default-font-size);
-$navigation-line-height: 30px;
-$navigation-icon-font-size: 20px;
-$navigation-icon-line-height: 30px;
+$navigation-font-size: 1rem;
+$navigation-line-height: 1.5;
+$navigation-icon-font-size: 1rem;
+$navigation-icon-line-height: 1.5;
 $navigation-icon-font-size-correction: 19px;
 $navigation-icon-line-height-correction: 31px;
 
-$skills-heading-font-size: pxtorem(24px);
-$skills-icon-font-size: pxtorem(40px);
+$skills-heading-font-size: 1.4rem;
+$skills-icon-font-size: 2.4rem;
 
-$cases-heading-font-size: pxtorem(24px);
-$cases-year-font-size: pxtorem(24px);
-$cases-role-font-size: pxtorem(16px);
+$cases-heading-font-size: 1.4rem;
+$cases-year-font-size: 1.2rem;
+$cases-role-font-size: .8rem;
 
-$footer-font-size: pxtorem($default-font-size);
-$footer-font-size-mobile: pxtorem(14px);
-$footer-line-height: pxtorem(30px);
-$footer-icon-font-size: pxtorem(20px);
-$footer-icon-line-height: pxtorem(24px);
-$footer-icon-linkedin-line-height: pxtorem(20px);
+$footer-font-size: 1rem;
+$footer-font-size-mobile: .7rem;
+$footer-line-height: 1.5rem;
+$footer-icon-font-size: 1rem;
+$footer-icon-line-height: 1.2rem;
+$footer-icon-linkedin-line-height: 1rem;

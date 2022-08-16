@@ -2,7 +2,16 @@
   animation: blockFadeIn 0.3s ease-out 0.1s 1 forwards;
 }
 
-// TITLE ANIMATION
+@keyframes pageFadeIn {
+  0% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes blockSlideInFromLeft {
   0% {
     opacity: 0;
@@ -20,7 +29,6 @@
   }
 }
 
-// TITLE ANIMATION
 @keyframes blockSlideInFromTop {
   0% {
     opacity: 0;
@@ -38,7 +46,6 @@
   }
 }
 
-// TITLE ANIMATION
 @keyframes blockFadeIn {
   0% {
     opacity: 0;
@@ -49,7 +56,6 @@
   }
 }
 
-// TITLE ANIMATION
 @keyframes blockBorderLineBottom {
   0% {
     border-bottom: 0;
