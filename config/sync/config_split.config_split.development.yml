@@ -4,17 +4,14 @@ status: false
 dependencies: {  }
 id: development
 label: Development
+weight: 0
+storage: folder
 folder: ../config/dev
 module:
-  blazy_ui: 0
   devel: 0
   field_ui: 0
-  kint: 0
   update: 0
   views_ui: 0
 theme: {  }
-blacklist: {  }
-graylist: {  }
-graylist_dependents: true
-graylist_skip_equal: true
-weight: 0
+complete_list: {  }
+partial_list: {  }

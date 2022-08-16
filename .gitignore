@@ -50,6 +50,7 @@ web/sites/*/private
 
 # Ignore docker generated files.
 .solr-data
+.mysql-data
 .docker-sync
 
 # Ignore keys/certificates.

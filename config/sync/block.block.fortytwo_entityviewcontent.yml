@@ -15,8 +15,8 @@ plugin: 'entity_view:node'
 settings:
   id: 'entity_view:node'
   label: 'Entity view (Content - Header)'
-  provider: ctools
   label_display: '0'
+  provider: ctools
   view_mode: header
   context_mapping:
     entity: '@node.node_route_context:node'

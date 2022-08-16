@@ -24,47 +24,49 @@ third_party_settings:
         - field_title
         - field_subtitle
         - field_links
+      label: 'Title wrapper'
       parent_name: ''
+      region: content
       weight: 2
       format_type: html_element
       format_settings:
-        id: ''
         classes: title-wrapper
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-      label: 'Title wrapper'
-      region: content
 id: node.page.header
 targetEntityType: node
 bundle: page
 mode: header
 content:
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_image_mobile:
     type: image
-    weight: 1
-    region: content
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_links:
     type: link
-    weight: 4
-    region: content
     label: hidden
     settings:
       trim_length: 80
@@ -73,21 +75,23 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
+    weight: 4
+    region: content
   field_subtitle:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_title:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
 hidden:
   field_content: true

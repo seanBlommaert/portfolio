@@ -32,28 +32,28 @@ settings:
       cases: cases
       form: form
     target_bundles_drag_drop:
-      text:
-        enabled: true
-        weight: -17
-      links:
-        enabled: true
-        weight: -16
-      skills:
-        enabled: true
-        weight: -15
-      cases:
-        enabled: true
-        weight: -14
-      form:
-        enabled: true
-        weight: -13
-      skill:
-        weight: -12
-        enabled: false
-      section:
-        weight: -11
-        enabled: false
       case:
         weight: -10
         enabled: false
+      cases:
+        weight: -14
+        enabled: true
+      form:
+        weight: -13
+        enabled: true
+      links:
+        weight: -16
+        enabled: true
+      section:
+        weight: -11
+        enabled: false
+      skill:
+        weight: -12
+        enabled: false
+      skills:
+        weight: -15
+        enabled: true
+      text:
+        weight: -17
+        enabled: true
 field_type: entity_reference_revisions

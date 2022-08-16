@@ -4,12 +4,11 @@ status: false
 dependencies: {  }
 id: excluded
 label: Excluded
+weight: 0
+storage: folder
 folder: ../config/excluded
 module: {  }
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - 'webform.webform.*'
-graylist_dependents: true
-graylist_skip_equal: true
-weight: 0

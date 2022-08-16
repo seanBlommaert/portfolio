@@ -25,8 +25,8 @@ settings:
       case: case
     target_bundles_drag_drop:
       case:
-        enabled: true
         weight: 8
+        enabled: true
       cases:
         weight: 9
         enabled: false

@@ -31,8 +31,8 @@ settings:
         weight: 7
         enabled: false
       skill:
-        enabled: true
         weight: 8
+        enabled: true
       skills:
         weight: 9
         enabled: false
