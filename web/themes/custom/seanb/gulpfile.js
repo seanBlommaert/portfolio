@@ -2,75 +2,107 @@
  * @file
  * Gulpfile for fortytwo.
  */
-
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 var del = require('del');
-var autoprefixer = require('autoprefixer');
+var $ = {};
+$.sassLint = require('gulp-sass-lint');
+$.plumber = require('gulp-plumber');
+$.sourcemaps = require('gulp-sourcemaps');
+$.sass = require('gulp-sass')(require('sass'));
+$.postcss = require('gulp-postcss');
+$.livereload = require('gulp-livereload');
+$.jscs = require('gulp-jscs');
 
-/**
- * @task sass-lint
- * Lint sass, abort calling task on error
- */
-gulp.task('sass-lint', function () {
+function sassLint() {
   return gulp.src('static/sass/**/*.s+(a|c)ss')
-  .pipe($.sassLint({configFile: '.sass-lint.yml'}))
-  .pipe($.sassLint.format())
-  .pipe($.sassLint.failOnError());
-});
+    .pipe($.sassLint({configFile: '.sass-lint.yml'}))
+    .pipe($.sassLint.format())
+    .pipe($.sassLint.failOnError());
+}
 
-gulp.task('sass-compile', ['sass-lint'], function () {
-  // postCss plugins and processes
+function sassCompile() {
   var pcPlug = {
     autoprefixer: require('autoprefixer'),
-    mqpacker: require('css-mqpacker')
+    mqpacker: require('css-mqpacker'),
+    flexbugs: require('postcss-flexbugs-fixes')
   };
   var pcProcess = [
-    pcPlug.autoprefixer({
-      browsers: ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 8', 'IE 9', 'IE 10', 'IE 11']
-    }),
-    pcPlug.mqpacker()
+    pcPlug.autoprefixer(),
+    pcPlug.mqpacker(),
+    pcPlug.flexbugs()
   ];
 
-  return gulp.src('static/sass/**/*.s+(a|c)ss') // Gets all files ending
-  .pipe($.sass())
-  .on('error', function (err) {
-    console.log(err);
-    this.emit('end');
-  })
-  .pipe($.sourcemaps.init())
-  .pipe($.postcss(pcProcess))
-  .pipe($.sourcemaps.write())
-  .pipe(gulp.dest('static/css'));
-});
+  var stream = gulp
+    .src('static/sass/**/*.s+(a|c)ss')
+    .pipe($.plumber())
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({outputStyle: "expanded"}))
+    .pipe($.postcss(pcProcess))
+    .pipe($.sourcemaps.write());
+
+  if (config.enable_livereload && config.livereload_hard_refresh) {
+    stream.pipe($.livereload());
+  }
+
+  stream.pipe(gulp.dest("static/css"));
+  return stream;
+}
+
+function compileJs() {
+  var stream = gulp.src(['static/js/**/*.js'])
+    .pipe($.jscs())
+    .pipe($.jscs.reporter())
+    .pipe(gulp.dest('./static/js'));
+
+  if (config.enable_livereload && config.livereload_hard_refresh) {
+    stream.pipe($.livereload());
+  }
+
+  return stream;
+}
 
 /**
- * @task js
- *
+ * Clean assets
  */
-gulp.task('js', function () {
-  return gulp.src(['static/js/**/*.js'])
-  .pipe($.jscs({fix: true}))
-  .pipe($.jscs.reporter())
-  .on('error', function (err) {
-    console.log(err);
-    this.emit('end');
-  })
-  .pipe(gulp.dest('./static/js'));
-});
+function clean() {
+  return del(['static/css/*']);
+}
+
+function loadConfig(cb) {
+  try {
+    console.log('Loading config.json. Change the values in gulp.config.json to suit your needs.');
+    config = require('./gulp.config.json');
+  } catch (error) {
+    console.log('No local config.json found. Using the defaults.');
+    console.log('Debug info: ' + error.code + ' => ' + error);
+  }
+
+  cb();
+}
 
 /**
- * @task watch
- * Watch files and do stuff.
+ * Watch files.
  */
-gulp.task('watch', ['sass-compile', 'js'], function () {
-  gulp.watch('static/sass/**/*.+(scss|sass)', ['sass-compile']);
-  gulp.watch('static/js/**/*.js', ['js']);
-});
+function watchFiles() {
+  gulp.watch('static/sass/**/*.+(scss|sass)', gulp.series(sassLint, sassCompile));
+  gulp.watch('static/js/**/*.js', compileJs);
 
-/**
- * @task default
- * Watch files and do stuff.
- */
-gulp.task('default', ['watch']);
+  if (config.enable_livereload) {
+    console.log('Using live reload. Please enable your livereload browser plugin.');
+    $.livereload.listen();
 
+    gulp.watch('static/css/**/*.css', function(file) {
+      $.livereload.changed(file.path);
+    });
+
+    gulp.watch('static/js/**/*.js', function(file){
+      $.livereload.changed(file.path);
+    });
+  }
+}
+
+const watch = gulp.series(loadConfig, clean, gulp.series(sassLint, sassCompile), watchFiles);
+
+// Export tasks.
+exports.watch = watch;
+exports.default = watch;

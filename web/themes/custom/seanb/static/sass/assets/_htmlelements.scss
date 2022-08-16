@@ -2,7 +2,7 @@ html, body {
   background-color: $body-background-color;
   font-family: $default-font;
   font-size: $default-font-size;
-  line-height: pxtorem($default-line-height);
+  line-height: 1.2;
   scroll-behavior: smooth;
 }
 

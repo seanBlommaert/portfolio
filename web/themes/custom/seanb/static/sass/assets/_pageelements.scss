@@ -1,6 +1,6 @@
 div.page-wrapper {
-  animation: blockFadeIn 0.5s ease-out 0s 1 forwards;
-  opacity: 0;
+  animation: pageFadeIn 0.5s ease-out 0s 1 forwards;
+  opacity: .1;
 }
 
 .wrapper {
@@ -15,8 +15,8 @@ div.alert {
   background-image: none;
   border: 0;
   color: $white;
-  margin-bottom: pxtorem(20px);
-  padding: pxtorem(10px);
+  margin-bottom: 2rem;
+  padding: 1rem;
 
   .krumo-root {
     color: $black;
@@ -30,8 +30,8 @@ div.alert {
 
   &:before {
     float: left;
-    margin-top: pxtorem(1px);
-    padding-right: pxtorem(10px);
+    margin-top: 1px;
+    padding-right: 1rem;
   }
 
   &.alert-warning {
@@ -68,6 +68,7 @@ p.intro {
 p {
   margin: 0 auto 1em;
   max-width: 860px;
+  line-height: 1.5;
 }
 
 a {
