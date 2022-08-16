@@ -25,6 +25,6 @@ settings:
       section: section
     target_bundles_drag_drop:
       section:
-        enabled: true
         weight: 2
+        enabled: true
 field_type: entity_reference_revisions

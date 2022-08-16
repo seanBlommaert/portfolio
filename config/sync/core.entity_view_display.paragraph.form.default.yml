@@ -15,18 +15,18 @@ bundle: form
 mode: default
 content:
   field_form:
-    weight: 1
+    type: webform_entity_reference_entity_view
     label: hidden
     settings:
-      source_entity: 0
+      source_entity: false
     third_party_settings: {  }
-    type: webform_entity_reference_entity_view
+    weight: 1
     region: content
   field_text:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: content
 hidden: {  }
