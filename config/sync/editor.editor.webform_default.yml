@@ -1,12 +1,12 @@
-uuid: 677051a0-865e-4718-8f40-52c952ad69c6
+uuid: a7129825-1a77-4246-bc77-c357f03d4b86
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.filtered_html
+    - filter.format.webform_default
   module:
     - ckeditor
-format: filtered_html
+format: webform_default
 editor: ckeditor
 settings:
   toolbar:
@@ -15,30 +15,40 @@ settings:
         -
           name: Formatting
           items:
-            - Styles
+            - Format
             - Bold
             - Italic
+            - Superscript
+            - Subscript
         -
-          name: Links
+          name: Media
+          items:
+            - SpecialChar
+            - ImceImage
+        -
+          name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
         -
           name: Lists
           items:
-            - BulletedList
             - NumberedList
+            - BulletedList
         -
-          name: Layout
+          name: Indentation
+          items:
+            - Outdent
+            - Indent
+        -
+          name: 'Block Formatting'
           items:
             - Blockquote
-            - Table
         -
           name: Tools
           items:
             - Source
-  plugins:
-    stylescombo:
-      styles: "p|Normal\r\np.intro|Introduction\r\nh2|Heading 2\r\nh3|Heading 3\r\n"
+            - Maximize
+  plugins: {  }
 image_upload:
   status: false

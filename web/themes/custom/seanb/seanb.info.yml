@@ -3,7 +3,7 @@ type: theme
 description: Forty Two Sub theme made from the starterkit
 base theme: fortytwo
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 libraries:
   - seanb/main

@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.page.field_content
     - field.field.node.page.field_image
+    - field.field.node.page.field_image_mobile
+    - field.field.node.page.field_links
     - field.field.node.page.field_meta
     - field.field.node.page.field_subtitle
     - field.field.node.page.field_title

@@ -1,12 +1,10 @@
-version: "3"
-
 # Access site at http://${NAME}.dev
 # Point search_api_solr to http://${NAME}-solr:8983/solr/#/drupal
 
 services:
 
   php:
-    image: wodby/drupal-php:7.4-dev-macos
+    image: wodby/drupal-php:8.1-dev-macos
     container_name: seanb_php
     environment:
       PHP_DOCROOT: web
@@ -54,7 +52,7 @@ services:
           - seanb.develop
 
   mariadb:
-    image: wodby/mariadb:10.7
+    image: mariadb:11.3
     container_name: seanb_db
     stop_grace_period: 30s
     environment:
