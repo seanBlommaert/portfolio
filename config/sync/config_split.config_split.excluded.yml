@@ -5,6 +5,8 @@ dependencies: {  }
 id: excluded
 label: Excluded
 weight: 0
+stackable: false
+no_patching: false
 storage: folder
 folder: ../config/excluded
 module: {  }

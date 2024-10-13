@@ -3,11 +3,6 @@ _core:
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
-  advagg: 0
-  advagg_bundler: 0
-  advagg_css_minify: 0
-  advagg_js_minify: 0
-  advagg_mod: 0
   allowed_formats: 0
   big_pipe: 0
   block: 0
@@ -46,6 +41,7 @@ module:
   path: 0
   path_alias: 0
   pathauto: 0
+  phpass: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -59,7 +55,7 @@ module:
   xmlsitemap: 1
   minimal: 1000
 theme:
-  seven: 0
   fortytwo: 0
   seanb: 0
+  claro: 0
 profile: minimal

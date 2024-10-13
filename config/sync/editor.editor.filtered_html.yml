@@ -42,9 +42,3 @@ settings:
       styles: "p|Normal\r\np.intro|Introduction\r\nh2|Heading 2\r\nh3|Heading 3\r\n"
 image_upload:
   status: false
-  scheme: public
-  directory: inline-images
-  max_size: ''
-  max_dimensions:
-    width: null
-    height: null
