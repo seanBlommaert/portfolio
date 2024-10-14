@@ -60,9 +60,9 @@ $settings['file_temp_path'] = $_ENV['TEMP'];
 $settings['hash_salt'] = 'pETnekQTaYUQhuvNRYLFzI8IVzHV9oRjBx0LvdFmRWjJe4q_iCYhmMPEJ4gOoJXOhMd7QvcvZw';
 
 /**
- * The active installation profile.
+ * Enable state caching.
  */
-$settings['install_profile'] = 'minimal';
+$settings['state_cache'] = TRUE;
 
 /**
  * Access control for update.php script.
