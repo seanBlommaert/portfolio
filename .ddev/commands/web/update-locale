@@ -1,0 +1,7 @@
+#!/bin/bash
+set -eu
+
+drush -y cr
+drush -y locale-check
+drush -y locale-update
+drush -y cr

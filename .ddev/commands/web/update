@@ -1,0 +1,14 @@
+#!/bin/bash
+set -eu
+
+drush cr
+drush cron:disable --all
+drush -y updatedb
+drush -y cr
+drush -y config-split:export excluded
+drush -y cim
+drush -y cr
+drush -y locale-check
+drush -y locale-update
+drush cron:enable --all
+drush -y cr

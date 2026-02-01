@@ -1,0 +1,139 @@
+#!/bin/bash
+
+set -euo pipefail
+
+CONFIG_DIR="config"
+MODULE_ROOT="web/modules"
+ROOT_PACKAGE=$(composer config name --no-interaction 2>/dev/null)
+
+# Ensure required tools exist
+for cmd in drush jq find awk sort comm; do
+  command -v "$cmd" >/dev/null 2>&1 || {
+    echo "❌ Missing required command: $cmd"
+    exit 1
+  }
+done
+
+echo "🔍 Scanning modules in $MODULE_ROOT"
+echo
+
+# --------------------------------------------------------------------
+# 1. All module groups on disk
+#    foo.info.yml
+#    foo_bar.info.yml
+#    → foo
+# --------------------------------------------------------------------
+ALL_GROUPS=$(find web/modules -name '*.info.yml' \
+  | sed -E 's#^(web/modules/(custom|contrib)/[^/]+).*#\1#' \
+  | xargs -n1 basename \
+  | sort -u)
+
+echo "  ℹ️ Find all modules..."
+
+# --------------------------------------------------------------------
+# 2. Installed module groups
+#    foo_bar enabled → foo
+# --------------------------------------------------------------------
+INSTALLED_GROUPS=$(ddev drush pm:list --status=enabled --format=json \
+  | jq -r 'keys[]' \
+  | awk -F/ '{print $NF}' \
+  | sort -u)
+
+echo "  ℹ️ Check for installed modules..."
+
+# --------------------------------------------------------------------
+# 3. Unused modules = on disk but not installed
+# --------------------------------------------------------------------
+UNUSED_GROUPS=$(comm -23 <(echo "$ALL_GROUPS") <(echo "$INSTALLED_GROUPS"))
+
+echo "  ℹ️ Check for unused modules..."
+
+# --------------------------------------------------------------------
+# 4. Remove modules required via composer dependencies
+# --------------------------------------------------------------------
+FILTERED_GROUPS=()
+
+for module in $UNUSED_GROUPS; do
+  # Skip custom modules
+  if find "$MODULE_ROOT/custom" -maxdepth 2 -name "${module}.info.yml" -print -quit | grep -q .; then
+    continue
+  fi
+  # Remove from list if Composer detects dependencies
+  if composer why "drupal/$module" --no-interaction 2>/dev/null \
+    | grep -v "^$ROOT_PACKAGE " \
+    | grep -q .
+  then
+    echo "    Skipped $module because of composer dependencies"
+    continue
+  fi
+  FILTERED_GROUPS+=("$module")
+done
+
+# Replace UNUSED_GROUPS with filtered list
+UNUSED_GROUPS=""
+(( ${#FILTERED_GROUPS[@]} )) && UNUSED_GROUPS="${FILTERED_GROUPS[*]}"
+
+echo "  ℹ️ Checked for composer dependencies..."
+
+# --------------------------------------------------------------------
+# 5. Output
+# --------------------------------------------------------------------
+if [[ -z "$UNUSED_GROUPS" ]]; then
+  echo
+  echo "✅ No unused module groups found."
+  exit 0
+fi
+
+# --------------------------------------------------------------------
+# Search config for dependencies
+# --------------------------------------------------------------------
+FOUND_ISSUES=0
+
+for module in $UNUSED_GROUPS; do
+  echo
+  echo "📦 Checking module: $module"
+
+  MATCHES=$(
+    {
+      grep -RIn --include='*.yml' \
+        -E "^[[:space:]]*-[[:space:]]*${module}(_[a-z0-9_]+)?[[:space:]]*$" \
+        "$CONFIG_DIR" 2>/dev/null
+
+      grep -RIn --include='*.yml' \
+        -E "^[[:space:]]*provider:[[:space:]]*['\"]?${module}(_[a-z0-9_]+)?['\"]?[[:space:]]*$" \
+        "$CONFIG_DIR" 2>/dev/null
+    } || true
+  )
+
+  if [[ -n "$MATCHES" ]]; then
+    FOUND_ISSUES=1
+    echo "  ⚠️  Config references found:"
+    echo "$MATCHES" | sed 's/^/    /'
+  else
+    echo "  ✅ No config references found."
+
+    # Detect custom modules by path
+    if find "$MODULE_ROOT/custom" -maxdepth 2 -name "${module}.info.yml" -print -quit | grep -q .; then
+      echo "  🚨  Custom module detected — remove manually if desired."
+    else
+      read -rp "  🤖 Remove contrib module via Composer (drupal/$module)? [y/N] " answer
+      if [[ "$answer" =~ ^[Yy]$ ]]; then
+        out=$(composer remove "drupal/$module" --no-interaction --quiet 2>&1)
+        status=$?
+        if [[ $status -eq 0 ]]; then
+          echo "  🚀 Removed $module module"
+        else
+          echo "  ❌ Failed to remove $module"
+          echo "$out" | sed 's/^/     /'
+        fi
+      else
+        echo "  ❌ Skipped $module"
+      fi
+    fi
+  fi
+
+  echo
+done
+
+echo "🎉 Done checking for unused modules."
+exit 0

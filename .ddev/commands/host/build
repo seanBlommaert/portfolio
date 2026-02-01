@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu
+
+git pull
+
+ddev build-code
+
+ddev update

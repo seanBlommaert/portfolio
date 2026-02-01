@@ -1,0 +1,83 @@
+#!/bin/bash
+set -eu
+
+# Usage: ddev module-updates
+
+rm -f .drupal-update.log
+
+# Create a function for the update of a single module.
+#
+# @param string $UPDATE_STRING
+#   The string containing the module name and version information.
+update_module() {
+  UPDATE_STRING=$1
+
+  read -ra UPDATE <<< "$UPDATE_STRING"
+
+  if [[ ${#UPDATE[@]} -lt 4 ]]; then
+    return
+  fi
+
+  MODULE=${UPDATE[0]}
+  MODULE_DISPLAY=${MODULE}
+  CURRENT_VERSION=${UPDATE[1]}
+  NEW_VERSION=${UPDATE[3]}
+  MODULE="${MODULE}:${NEW_VERSION}"
+
+  # If the module does not start with drupal/, skip it
+  if [[ ! $MODULE =~ ^drupal/ ]]; then
+    return
+  fi
+
+  # If the module starts with drupal/core, update the core packages
+  if [[ $MODULE =~ ^drupal/core ]]; then
+    MODULE="drupal/core-composer-scaffold:$NEW_VERSION drupal/core-project-message:$NEW_VERSION drupal/core-recommended:$NEW_VERSION drupal/core-dev:$NEW_VERSION"
+    MODULE_DISPLAY="drupal/core"
+  fi
+
+  # Run composer update
+  echo "Updating $MODULE_DISPLAY from $CURRENT_VERSION to $NEW_VERSION..." >&2
+  rm -f .drupal-update.log
+  if ! ddev composer update $MODULE --with-all-dependencies > .drupal-update.log 2>&1; then
+    echo "Failed to update $MODULE_DISPLAY from $CURRENT_VERSION to $NEW_VERSION. Resetting changes." >&2
+    git reset --hard > /dev/null 2>&1
+    composer install > /dev/null 2>&1
+    return
+  fi
+
+  # Check for update issues
+  if grep -q "Your requirements could not be resolved" .drupal-update.log || \
+     grep -q "Only root package requirements can receive temporary constraints" .drupal-update.log || \
+     grep -q "Cannot apply patch" .drupal-update.log; then
+    echo "Failed to update $MODULE_DISPLAY from $CURRENT_VERSION to $NEW_VERSION. Resetting changes." >&2
+    git reset --hard > /dev/null 2>&1
+    composer install > /dev/null 2>&1
+    return
+  fi
+
+  # Run Drupal updates
+  ddev drush updb -y > /dev/null 2>&1
+  ddev drush cex -y > /dev/null 2>&1
+
+  # Commit the update
+  git commit -am "Updated $MODULE_DISPLAY from $CURRENT_VERSION to $NEW_VERSION." > /dev/null 2>&1
+  echo "Updated $MODULE_DISPLAY from $CURRENT_VERSION to $NEW_VERSION." >&2
+}
+
+# Try to update drupal core first
+OUTDATED_CORE_PACKAGES=()
+while IFS= read -r line; do
+    [[ $line == drupal/* ]] && OUTDATED_CORE_PACKAGES+=("$line")
+done < <(ddev composer outdated "drupal/core-*" --minor-only 2>&1)
+if [[ ${#OUTDATED_CORE_PACKAGES[@]} > 0 ]]; then
+  update_module "${OUTDATED_CORE_PACKAGES[0]}"
+fi
+
+# Try to update all modules
+OUTDATED_PACKAGES=()
+while IFS= read -r line; do
+    [[ $line == drupal/* ]] && OUTDATED_PACKAGES+=("$line")
+done < <(ddev composer outdated "drupal/*" --minor-only 2>&1)
+for UPDATE_STRING in "${OUTDATED_PACKAGES[@]}"; do
+  update_module "$UPDATE_STRING"
+done
