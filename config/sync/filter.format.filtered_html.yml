@@ -32,7 +32,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<p class="intro"> <a href hreflang class> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr>'
+      allowed_html: '<br> <p class="intro"> <h2> <h3> <h4> <h5> <h6> <strong> <em> <code> <blockquote> <a href> <ul> <ol start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
